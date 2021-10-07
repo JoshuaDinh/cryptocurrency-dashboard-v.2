@@ -1,0 +1,6 @@
+.side-nav {
+  min-width: 6vw;
+  background: var(--main-color);
+  background: var(--main-bkg);
+  background: var(--main-bkg-browsers);
+}

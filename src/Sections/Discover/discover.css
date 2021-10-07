@@ -1,0 +1,9 @@
+.discover {
+  min-height: 100vh;
+  padding: 2%;
+}
+
+.discover-details {
+  display: flex;
+  height: 65vh;
+}
