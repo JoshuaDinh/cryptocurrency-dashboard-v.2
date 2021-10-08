@@ -56,7 +56,8 @@ const Discover = ({ coinList }) => {
       <DiscoverHeader coinList={coinList} selectedCoin={selectedCoin} />
       <div className="discover-details">
         <div className="discover-details-left">
-          <Table coinList={coinList} /> <LineChart chartData={chartData} />{" "}
+          <Table coinList={coinList} setSelectedCoin={setSelectedCoin} />
+          <LineChart chartData={chartData} />
         </div>
         <DiscoverCard coinList={coinList} selectedCoin={selectedCoin} />
       </div>

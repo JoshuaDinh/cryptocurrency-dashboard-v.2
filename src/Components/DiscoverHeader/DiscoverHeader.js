@@ -1,5 +1,6 @@
 import React from "react";
 import { format, determineColor } from "../../Utilities/Utilities";
+import moment from "moment";
 import "./discoverHeader.css";
 
 const DiscoverHeader = ({ coinList, selectedCoin }) => {
@@ -45,10 +46,10 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
               <h5>
                 ATH :<span className="green">${ath}</span>
               </h5>
-              {/* <p className="discover-header-updated">
+              <span className="discover-header-updated">
                 Last Updated at :
                 {moment(last_updated).format("MMMM Do YYYY, h:mm:ss a")}
-              </p> */}
+              </span>{" "}
             </div>
           </>
         );
