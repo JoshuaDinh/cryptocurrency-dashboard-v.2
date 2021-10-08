@@ -52,7 +52,11 @@ const Discover = ({ coinList }) => {
 
   return (
     <div className="discover">
-      <Search setSelectedCoin={setSelectedCoin} coinList={coinList} />
+      <Search
+        setSelectedCoin={setSelectedCoin}
+        selectedCoin={selectedCoin}
+        coinList={coinList}
+      />
       <DiscoverHeader coinList={coinList} selectedCoin={selectedCoin} />
       <div className="discover-details">
         <div className="discover-details-left">

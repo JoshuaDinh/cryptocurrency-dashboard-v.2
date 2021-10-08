@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./search.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Search = ({ setSelectedCoin }) => {
+const Search = ({ setSelectedCoin, selectedCoin }) => {
   const [input, setInput] = useState("");
 
   // Handle Inputs
@@ -29,6 +29,7 @@ const Search = ({ setSelectedCoin }) => {
           className="search-input"
           type="text"
           placeholder="Search for a Coin.."
+          value={selectedCoin}
         />
       </form>
     </div>

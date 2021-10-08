@@ -27,7 +27,7 @@ const App = () => {
       <SideNavigation />
       <div className="app-content">
         <Discover coinList={coinList} />
-        <MarketCap />
+        <MarketCap coinList={coinList} />
       </div>
     </div>
   );
