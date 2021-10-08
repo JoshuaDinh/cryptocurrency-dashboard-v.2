@@ -4,35 +4,41 @@ import Search from "Components/Search/Search";
 import LineChart from "Components/LineChart/LineChart";
 import DiscoverCard from "Components/DiscoverCard/DiscoverCard";
 import DiscoverHeader from "Components/DiscoverHeader/DiscoverHeader";
-
-const Discover = () => {
-  const [selectedCoin, setSelectedCoin] = useState("");
+import Table from "Components/Table/Table";
+const Discover = ({ coinList }) => {
+  const [selectedCoin, setSelectedCoin] = useState("bitcoin");
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
     try {
       async function fetchData() {
         const oneDayResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1`
+          `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1day&interval=hourly`
         );
         const responseOne = oneDayResponse.json();
         const oneWeekResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=7`
+          `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7day&interval=daily`
         );
         const responseTwo = oneWeekResponse.json();
         const twoWeekResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=14`
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=14&interval=daily`
         );
         const responseThree = twoWeekResponse.json();
         const oneMonthResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=30`
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=30&interval=daily`
         );
         const responseFour = oneMonthResponse.json();
+        const oneHrResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1hr&interval=minute`
+        );
+        const responseFive = oneHrResponse.json();
+
         const data = await Promise.all([
           responseOne,
           responseTwo,
           responseThree,
           responseFour,
+          responseFive,
         ]);
         setChartData(data);
       }
@@ -45,14 +51,16 @@ const Discover = () => {
   }, [selectedCoin]);
 
   return (
-    <section className="discover">
-      <Search setSelectedCoin={setSelectedCoin} />
-      <DiscoverHeader />
+    <div className="discover">
+      <Search setSelectedCoin={setSelectedCoin} coinList={coinList} />
+      <DiscoverHeader coinList={coinList} selectedCoin={selectedCoin} />
       <div className="discover-details">
-        <LineChart />
-        <DiscoverCard />
+        <div className="discover-details-left">
+          <Table coinList={coinList} /> <LineChart chartData={chartData} />{" "}
+        </div>
+        <DiscoverCard coinList={coinList} selectedCoin={selectedCoin} />
       </div>
-    </section>
+    </div>
   );
 };
 

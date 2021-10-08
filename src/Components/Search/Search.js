@@ -19,6 +19,7 @@ const Search = ({ setSelectedCoin }) => {
       return () => clearTimeout(timer);
     }
   }, [input]);
+
   return (
     <div className="search">
       <form className="search-form">

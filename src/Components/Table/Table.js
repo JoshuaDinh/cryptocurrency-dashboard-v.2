@@ -1,70 +1,42 @@
 import React from "react";
 import "./table.css";
+import { format, formatShortened } from "Utilities/Utilities";
 
-const Table = () => {
+const Table = ({ coinList }) => {
+  function renderTable(coinList) {
+    return coinList.map((coin) => {
+      return (
+        <tr className="row">
+          <td>{coin.market_cap_rank}</td>
+          <td>{coin.name}</td>{" "}
+          <td className="table-column">
+            <img className="table-coin-img" src={coin.image} alt="" />
+          </td>
+          <td>{format(coin.current_price)}</td>
+          <td>{formatShortened(coin.total_supply)}</td>
+          <td>{formatShortened(coin.total_volume)}</td>
+          <td>{formatShortened(coin.market_cap)}</td>
+        </tr>
+      );
+    });
+  }
   return (
-    <table className="table">
-      <table>
+    <div className="table-container">
+      <table className="table">
         <thead>
-          <tr>
-            <th className="table-column">#</th>
-            <th className="table-column">Name</th>
-            <th className="table-column">Symbol</th>
-            <th className="table-column">Price</th>
-            <th className="table-column">High</th>
-            <th className="table-column">Low</th>
-            <th className="table-column">%</th>
-            <th className="table-column">Supply</th>
-            <th className="table-column">Volume</th>
-            <th className="table-column">Market Cap</th>
+          <tr className="row">
+            <th>#</th>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Supply</th>
+            <th>Volume</th>
+            <th>Market-Cap</th>
           </tr>
         </thead>
-        <tbody className="table-body">
-          <tr className="tableRow">
-            <td className="table-column">#</td>
-            <td className="table-column">Name</td>
-            <td className="table-column ">
-              <img className="coinSymbol" src="" alt="" />
-            </td>
-            <td className="table-column">Price</td>
-            <td className="table-column dailyHigh ">High</td>
-            <td className="table-column dailyLow ">Low</td>
-            <td>%</td>
-            <td className="table-column">supply</td>
-            <td className="table-column">volume</td>
-            <td className="table-column">market</td>
-          </tr>
-          <tr className="tableRow">
-            <td className="table-column">#</td>
-            <td className="table-column">Name</td>
-            <td className="table-column ">
-              <img className="coinSymbol" src="" alt="" />
-            </td>
-            <td className="table-column">Price</td>
-            <td className="table-column dailyHigh ">High</td>
-            <td className="table-column dailyLow ">Low</td>
-            <td>%</td>
-            <td className="table-column">supply</td>
-            <td className="table-column">volume</td>
-            <td className="table-column">market</td>
-          </tr>
-          <tr className="tableRow">
-            <td className="table-column">#</td>
-            <td className="table-column">Name</td>
-            <td className="table-column ">
-              <img className="coinSymbol" src="" alt="" />
-            </td>
-            <td className="table-column">Price</td>
-            <td className="table-column dailyHigh ">High</td>
-            <td className="table-column dailyLow ">Low</td>
-            <td>%</td>
-            <td className="table-column">supply</td>
-            <td className="table-column">volume</td>
-            <td className="table-column">market</td>
-          </tr>
-        </tbody>
+        <tbody className="table-body">{renderTable(coinList)}</tbody>
       </table>
-    </table>
+    </div>
   );
 };
 

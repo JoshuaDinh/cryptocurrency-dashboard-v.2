@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  height: 10vh;
 }
 
 .discover-header-container {
@@ -10,8 +10,12 @@
   align-items: center;
 }
 
+.discover-header-img {
+  height: 2em;
+}
+
 .discover-header-container > h2 {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .discover-header-container-middle {
@@ -19,13 +23,4 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* border: 1px solid red; */
-}
-
-.discover-header-container-middle > h4 {
-  font-size: 0.8rem;
-}
-
-.discover-header-updated {
-  font-size: 0.8rem;
 }
