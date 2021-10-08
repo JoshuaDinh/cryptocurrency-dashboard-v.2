@@ -10,9 +10,12 @@ const Explore = ({ coinList }) => {
     event.preventDefault();
     setToggle(desc);
   };
+  // Shallow copy of coinList
+  const sortedArray = [...coinList];
+
   function renderBasicCard(coinList) {
     if (toggle === "gains") {
-      const sortedArray = coinList.sort(
+      sortedArray.sort(
         (a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h
       );
       return sortedArray.slice(0, 6).map((coin) => {
@@ -26,7 +29,7 @@ const Explore = ({ coinList }) => {
         );
       });
     } else if (toggle === "losses") {
-      const sortedArray = coinList.sort(
+      sortedArray.sort(
         (a, b) => a.price_change_percentage_24h - b.price_change_percentage_24h
       );
       return sortedArray.slice(0, 6).map((coin) => {
