@@ -6,7 +6,6 @@ import { format, determineColor } from "../../Utilities/Utilities";
 const DiscoverCard = ({ coinList, selectedCoin }) => {
   function updateDiscoverCard() {
     for (let coin of coinList) {
-      console.log(coin);
       if (coin.id === selectedCoin) {
         const {
           market_cap,

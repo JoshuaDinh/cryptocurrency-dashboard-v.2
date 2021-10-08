@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./lineChart.css";
 import { Line } from "react-chartjs-2";
 
@@ -6,11 +6,11 @@ const LineChart = ({ chartData }) => {
   const [index, setIndex] = useState(4);
 
   let label = [];
-  for (let i = 0; i < chartData[index]?.market_caps.length; i++) {
+  for (let i = 0; i < chartData[index]?.prices.length; i++) {
     label.push(i);
   }
 
-  const data = (index) => {
+  function data(index) {
     return {
       labels: label,
       datasets: [
@@ -22,7 +22,9 @@ const LineChart = ({ chartData }) => {
         },
       ],
     };
-  };
+  }
+
+  console.log(chartData);
 
   const options = {
     maintainAspectRatio: false,

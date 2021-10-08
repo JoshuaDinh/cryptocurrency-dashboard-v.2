@@ -13,11 +13,11 @@ const Discover = ({ coinList }) => {
     try {
       async function fetchData() {
         const oneDayResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1day&interval=hourly`
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1day&interval=hourly`
         );
         const responseOne = oneDayResponse.json();
         const oneWeekResponse = await fetch(
-          `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7day&interval=daily`
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=7day&interval=daily`
         );
         const responseTwo = oneWeekResponse.json();
         const twoWeekResponse = await fetch(

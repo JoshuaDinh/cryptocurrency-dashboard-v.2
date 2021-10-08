@@ -50,7 +50,7 @@ const MarketCapTopFive = ({ coinList }) => {
         ],
       };
       return (
-        <div className="mc-top-five">
+        <div key={coin.id} className="mc-top-five">
           <div className="mc-top-five-header">
             <img src={coin.image} alt="#" className="mc-top-five-img" />
             <p>{coin.name}</p>
