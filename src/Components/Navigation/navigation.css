@@ -1,4 +1,30 @@
 .navigation {
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
   width: 100%;
+}
+
+.nav-logo {
+  min-width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.logo {
+  width: 3em;
+}
+
+.nav-link-container {
+  min-width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
 }
