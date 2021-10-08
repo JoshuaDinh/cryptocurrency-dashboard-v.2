@@ -18,7 +18,7 @@ const LineChart = ({ chartData }) => {
           label: "Price(USD)",
           data: chartData[index]?.prices,
           fill: true,
-          borderColor: "#000000",
+          borderColor: "rgb(58, 96, 115)",
         },
       ],
     };
@@ -43,24 +43,38 @@ const LineChart = ({ chartData }) => {
     },
   };
 
-  console.log(chartData);
   return (
     <>
       <div className="line-chart-container">
         <div className="days-container">
-          <h4 className="day-item" onClick={() => setIndex(4)}>
+          <h4
+            className={`day-item ${index === 4 && "day-active"}`}
+            onClick={() => setIndex(4)}
+          >
             1Hour
           </h4>
-          <h4 className="day-item" onClick={() => setIndex(0)}>
+          <h4
+            className={`day-item ${index === 0 && "day-active"}`}
+            onClick={() => setIndex(0)}
+          >
             24Hours
           </h4>
-          <h4 className="day-item" onClick={() => setIndex(1)}>
+          <h4
+            className={`day-item ${index === 1 && "day-active"}`}
+            onClick={() => setIndex(1)}
+          >
             7 Days
           </h4>
-          <h4 className="day-item" onClick={() => setIndex(2)}>
+          <h4
+            className={`day-item ${index === 2 && "day-active"}`}
+            onClick={() => setIndex(2)}
+          >
             14 Days
           </h4>
-          <h4 className="day-item" onClick={() => setIndex(3)}>
+          <h4
+            className={`day-item ${index === 3 && "day-active"}`}
+            onClick={() => setIndex(3)}
+          >
             30 Days
           </h4>
         </div>

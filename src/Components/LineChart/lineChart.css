@@ -18,3 +18,20 @@
   justify-content: space-evenly;
   height: 10vh;
 }
+
+.day-active {
+  color: white;
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.75),
+    rgb(22, 34, 42, 0.75)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.75),
+    rgb(22, 34, 42, 0.75)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
