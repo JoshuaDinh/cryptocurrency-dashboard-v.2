@@ -1,0 +1,10 @@
+.doughnut {
+  position: relative;
+  text-align: center;
+  height: 50%;
+  cursor: pointer;
+}
+
+.doughnut:hover .tooltip {
+  display: none;
+}

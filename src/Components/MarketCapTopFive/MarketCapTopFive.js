@@ -58,9 +58,9 @@ const MarketCapTopFive = ({ coinList }) => {
               <span>MarketCap : {format(coin.market_cap)}</span>
             </div>
           </div>
-          <div className="mc-top-5-sparkline">
+          {/* <div className="mc-top-five-sparkline">
             <Line data={data} options={options} />
-          </div>
+          </div> */}
         </div>
       );
     });

@@ -1,5 +1,10 @@
 .side-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   min-width: 10vw;
+  max-width: 10vw;
+  height: 100vh;
   background: var(--main-color);
   background: var(--main-bkg);
   background: var(--main-bkg-browsers);

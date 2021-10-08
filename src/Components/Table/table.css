@@ -7,6 +7,7 @@
 }
 
 tr:hover {
+  color: whitesmoke;
   cursor: pointer;
   background: #16222a; /* fallback for old browsers */
 

@@ -1,0 +1,13 @@
+h3 {
+  text-align: center;
+}
+.pie-chart {
+  position: relative;
+  height: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pie-chart:hover .tooltip {
+  display: none;
+}

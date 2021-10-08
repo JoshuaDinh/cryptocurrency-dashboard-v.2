@@ -29,7 +29,7 @@ const Search = ({ setSelectedCoin, selectedCoin }) => {
           className="search-input"
           type="text"
           placeholder="Search for a Coin.."
-          value={selectedCoin}
+          value={input}
         />
       </form>
     </div>

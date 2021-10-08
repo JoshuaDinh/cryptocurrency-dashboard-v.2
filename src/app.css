@@ -17,28 +17,7 @@
     #3a6073,
     #16222a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.app {
-  display: flex;
-  min-height: 100vh;
-  max-width: 100vw;
-  background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.app-content {
-  flex: 1;
-  max-width: 94vw;
+  --secondary-color: rgb(219, 159, 30);
 }
 
 .red {
@@ -47,4 +26,29 @@
 
 .green {
   color: green;
+}
+
+.tooltip {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2%;
+  background: #16222a; /* fallback for old browsers */
+  color: white;
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.75),
+    rgb(22, 34, 42, 0.75)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.75),
+    rgb(22, 34, 42, 0.75)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 25px;
 }

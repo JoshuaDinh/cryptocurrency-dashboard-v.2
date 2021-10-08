@@ -1,6 +1,6 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
-import "./doughnut.css";
+import "./pieChart.css";
+import { Pie } from "react-chartjs-2";
 
 const options = {
   maintainAspectRatio: false,
@@ -8,7 +8,7 @@ const options = {
   scales: {
     y: {
       grid: {
-        display: true,
+        display: false,
       },
       ticks: { display: false },
     },
@@ -22,7 +22,7 @@ const options = {
   },
 };
 
-const DoughnutChart = ({ coinList }) => {
+const PieChart = ({ coinList }) => {
   const data = {
     labels: [
       coinList[0]?.name,
@@ -33,12 +33,13 @@ const DoughnutChart = ({ coinList }) => {
     ],
     datasets: [
       {
+        label: "# of Votes",
         data: [
-          coinList[0]?.market_cap,
-          coinList[1]?.market_cap,
-          coinList[2]?.market_cap,
-          coinList[3]?.market_cap,
-          coinList[4]?.market_cap,
+          coinList[0]?.market_cap_change_percentage_24h,
+          coinList[1]?.market_cap_change_percentage_24h,
+          coinList[2]?.market_cap_change_percentage_24h,
+          coinList[3]?.market_cap_change_percentage_24h,
+          coinList[4]?.market_cap_change_percentage_24h,
         ],
         backgroundColor: [
           "rgb(58, 96, 115)",
@@ -47,19 +48,19 @@ const DoughnutChart = ({ coinList }) => {
           "rgb(153, 154, 155)",
           "rgb(219, 159, 30)",
         ],
-        borderWidth: 1,
       },
     ],
   };
   return (
-    <div className="doughnut">
-      <div className="tooltip">
-        <h3>Top 5 by MarketCap</h3>
+    <>
+      <div className="pie-chart">
+        <div className="tooltip">
+          <h3>MarketCap 24HR Change</h3>
+        </div>
+        <Pie data={data} options={options} />
       </div>
-
-      <Doughnut data={data} options={options} />
-    </div>
+    </>
   );
 };
 
-export default DoughnutChart;
+export default PieChart;

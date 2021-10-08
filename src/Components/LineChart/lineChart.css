@@ -1,10 +1,8 @@
 .line-chart-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin-right: 20px;
   width: 100%;
-  flex: 1;
 }
 
 .line-canvas-container {
@@ -17,6 +15,13 @@
   align-items: center;
   justify-content: space-evenly;
   height: 10vh;
+}
+
+.day-item:hover {
+  background: var(--secondary-color);
+  color: white !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .day-active {

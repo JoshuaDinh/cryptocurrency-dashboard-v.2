@@ -24,8 +24,6 @@ const LineChart = ({ chartData }) => {
     };
   }
 
-  console.log(chartData);
-
   const options = {
     maintainAspectRatio: false,
     responsive: true,

@@ -1,6 +1,6 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
-import "./doughnut.css";
+import "./barChart.css";
+import { Bar } from "react-chartjs-2";
 
 const options = {
   maintainAspectRatio: false,
@@ -10,19 +10,19 @@ const options = {
       grid: {
         display: true,
       },
-      ticks: { display: false },
+      ticks: { display: true },
     },
     x: {
       beginAtZero: true,
       grid: {
-        display: false,
+        display: true,
       },
-      ticks: { display: false },
     },
   },
 };
 
-const DoughnutChart = ({ coinList }) => {
+const BarChart = ({ coinList }) => {
+  console.log(coinList);
   const data = {
     labels: [
       coinList[0]?.name,
@@ -33,12 +33,13 @@ const DoughnutChart = ({ coinList }) => {
     ],
     datasets: [
       {
+        label: "Market-Cap 24 HR Change (USD)",
         data: [
-          coinList[0]?.market_cap,
-          coinList[1]?.market_cap,
-          coinList[2]?.market_cap,
-          coinList[3]?.market_cap,
-          coinList[4]?.market_cap,
+          coinList[0]?.market_cap_change_24h,
+          coinList[1]?.market_cap_change_24h,
+          coinList[2]?.market_cap_change_24h,
+          coinList[3]?.market_cap_change_24h,
+          coinList[4]?.market_cap_change_24h,
         ],
         backgroundColor: [
           "rgb(58, 96, 115)",
@@ -52,14 +53,12 @@ const DoughnutChart = ({ coinList }) => {
     ],
   };
   return (
-    <div className="doughnut">
-      <div className="tooltip">
-        <h3>Top 5 by MarketCap</h3>
+    <>
+      <div className="bar-chart">
+        <Bar data={data} options={options} />
       </div>
-
-      <Doughnut data={data} options={options} />
-    </div>
+    </>
   );
 };
 
-export default DoughnutChart;
+export default BarChart;
