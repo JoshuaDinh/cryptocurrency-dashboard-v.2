@@ -18,7 +18,7 @@ const Navigation = () => {
           Home
         </NavLink>
         <NavLink to="/Dashboard" className="nav-link">
-          Dasboard
+          Dashboard
         </NavLink>
         <NavLink to="/" className="nav-link">
           About

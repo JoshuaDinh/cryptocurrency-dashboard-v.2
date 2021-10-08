@@ -1,0 +1,28 @@
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  min-height: 70vh;
+  border: 1px solid red;
+}
+
+.explore-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 50vh;
+  border: 1px solid green;
+}
+
+.explore-left > h2 {
+  margin: 5% 0;
+}
+
+.explore-right {
+  width: 100%;
+  min-height: 50vh;
+  border: 1px solid green;
+}

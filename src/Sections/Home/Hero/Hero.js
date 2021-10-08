@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Link from "Components/Link/Link";
 import "./hero.css";
 
 const Hero = () => {
@@ -7,9 +7,7 @@ const Hero = () => {
     <div className="hero">
       <h1>The future of money is here.. </h1>
       <h3>Explore the posibilities</h3>
-      <NavLink to="/ads" className="hero-nav-link">
-        Learn More
-      </NavLink>
+      <Link title="Learn More" link="/" />
     </div>
   );
 };
