@@ -1,0 +1,66 @@
+.learn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7%;
+  min-height: 70vh;
+}
+
+.learn-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.learn-right > h2 {
+  margin: 5% 0;
+}
+
+.learn-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 70vh;
+}
+
+.learn-circle-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15em;
+  width: 15em;
+  background: var(--main-color);
+  background: var(--main-bkg);
+  background: var(--main-bkg-browsers);
+  border-radius: 999px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  z-index: 2;
+}
+.learn-circle-main::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 14.5em;
+  width: 14.5em;
+  background: white;
+  border-radius: 999px;
+}
+
+.learn-circle-main > h1 {
+  font-size: 2rem;
+  z-index: 2;
+}
+.learn-icons {
+  font-size: 2rem;
+  z-index: 2;
+}
