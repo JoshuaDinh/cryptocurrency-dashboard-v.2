@@ -9,10 +9,10 @@
   flex-direction: column;
   flex: 1;
   margin: 0 5px;
-  color: whitesmoke;
-  background: var(--main-color);
+  /* color: whitesmoke; */
+  /* background: var(--main-color);
   background: var(--main-bkg);
-  background: var(--main-bkg-browsers);
+  background: var(--main-bkg-browsers); */
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 

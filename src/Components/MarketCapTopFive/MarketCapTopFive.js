@@ -31,7 +31,7 @@ const options = {
   },
 };
 
-const MarketCapTopFive = ({ coinList }) => {
+const MarketCapTopFive = ({ coinList, sparkline }) => {
   function renderTopFive() {
     return coinList.slice(0, 5).map((coin) => {
       let label = [];
@@ -58,9 +58,11 @@ const MarketCapTopFive = ({ coinList }) => {
               <span>MarketCap : {format(coin.market_cap)}</span>
             </div>
           </div>
-          {/* <div className="mc-top-five-sparkline">
-            <Line data={data} options={options} />
-          </div> */}
+          {sparkline && (
+            <div className="mc-top-five-sparkline">
+              <Line data={data} options={options} />
+            </div>
+          )}
         </div>
       );
     });

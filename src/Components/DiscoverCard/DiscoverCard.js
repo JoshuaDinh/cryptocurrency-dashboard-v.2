@@ -12,10 +12,8 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
           total_volume,
           circulating_supply,
           max_supply,
-          fully_diluted_valuation,
           market_cap_change_percentage_24h,
           market_cap_change_24h,
-          last_updated,
         } = coin;
         return (
           <>

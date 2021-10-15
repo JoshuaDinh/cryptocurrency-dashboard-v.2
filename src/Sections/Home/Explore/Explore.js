@@ -13,7 +13,7 @@ const Explore = ({ coinList }) => {
   // Shallow copy of coinList
   const sortedArray = [...coinList];
 
-  function renderBasicCard(coinList) {
+  function renderGainsOrLosses(coinList) {
     if (toggle === "gains") {
       sortedArray.sort(
         (a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h
@@ -23,7 +23,7 @@ const Explore = ({ coinList }) => {
           <BasicCard
             title={coin.name}
             image={coin.image}
-            data={coin.price_change_percentage_24h}
+            percentage={coin.price_change_percentage_24h}
             operator={"+"}
           />
         );
@@ -37,7 +37,7 @@ const Explore = ({ coinList }) => {
           <BasicCard
             title={coin.name}
             image={coin.image}
-            data={coin.price_change_percentage_24h}
+            percentage={coin.price_change_percentage_24h}
           />
         );
       });
@@ -48,7 +48,7 @@ const Explore = ({ coinList }) => {
       <div className="explore-left">
         <h1>Explore digital assets, like Bitcoin, Ethereum and Dogecoin</h1>
         <h2>& view the statistics on their performence in the market place.</h2>
-        <Link title="See more assets" link="/Dashboard" dark />
+        <Link title="See more assets" link="/DigitalAssets" dark />
       </div>
       <div className="explore-right">
         <div className="explore-right-button-container">
@@ -70,7 +70,7 @@ const Explore = ({ coinList }) => {
           </button>
         </div>
         <div className="explore-card-container">
-          {renderBasicCard(coinList)}
+          {renderGainsOrLosses(coinList)}
         </div>
       </div>
     </div>

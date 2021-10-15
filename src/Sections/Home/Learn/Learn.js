@@ -5,7 +5,6 @@ import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
 import SecurityIcon from "@mui/icons-material/Security";
 import VpnLockIcon from "@mui/icons-material/VpnLock";
 import BackupIcon from "@mui/icons-material/Backup";
-import Particles from "react-particles-js";
 
 const Learn = () => {
   return (
@@ -13,7 +12,8 @@ const Learn = () => {
       <div className="learn-left">
         <div className="learn-circle-main">
           <h1>Blockchain</h1>
-        </div>
+        </div>{" "}
+        <span className="ripple"></span>
       </div>
       <div className="learn-right">
         <h1>Take the time to educate</h1>
