@@ -23,7 +23,7 @@ const Navigation = () => {
         <NavLink to="/DigitalAssets" className="nav-link">
           Assets
         </NavLink>
-        <NavLink to="/" className="nav-link">
+        <NavLink to="/LearnMore" className="nav-link">
           Learn
         </NavLink>
         <NavLink to="/" className="nav-link">

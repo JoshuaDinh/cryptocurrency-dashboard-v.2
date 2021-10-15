@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dashboard from "./Views/Dashboard/Dashboard";
 import Home from "./Views/Home/Home";
 import DigitalAssets from "Views/DigitalAssets/DigitalAssets";
+import LearnMore from "Views/LearnMore/LearnMore";
 
 const App = () => {
   const [coinList, setCoinList] = useState([]);
@@ -26,6 +27,9 @@ const App = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/LearnMore">
+          <LearnMore />
+        </Route>
         <Route path="/DigitalAssets">
           <DigitalAssets coinList={coinList} />
         </Route>

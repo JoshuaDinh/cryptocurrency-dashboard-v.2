@@ -1,0 +1,24 @@
+.learn-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 500px;
+  margin: 10% 0;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.learn-card-image {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.learn-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  min-height: 20vh;
+}
+.learn-card-content > h1 {
+}
