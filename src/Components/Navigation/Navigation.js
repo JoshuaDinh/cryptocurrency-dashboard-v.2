@@ -20,8 +20,8 @@ const Navigation = () => {
         <NavLink to="/Dashboard" className="nav-link">
           Dashboard
         </NavLink>
-        <NavLink to="/" className="nav-link">
-          About
+        <NavLink to="/DigitalAssets" className="nav-link">
+          Assets
         </NavLink>
         <NavLink to="/" className="nav-link">
           Learn
