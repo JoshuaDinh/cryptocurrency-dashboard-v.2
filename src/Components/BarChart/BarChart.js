@@ -22,7 +22,6 @@ const options = {
 };
 
 const BarChart = ({ coinList }) => {
-  console.log(coinList);
   const data = {
     labels: [
       coinList[0]?.name,

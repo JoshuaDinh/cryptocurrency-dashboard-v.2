@@ -12,7 +12,7 @@ const Home = ({ coinList }) => {
     <div className="home">
       <Navigation />
       <Hero />
-      <DashboardCta />
+      <DashboardCta coinList={coinList} />
       <Explore coinList={coinList} />
       <Analytics coinList={coinList} />
       <Learn />

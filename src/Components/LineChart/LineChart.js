@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./lineChart.css";
 import { Line } from "react-chartjs-2";
 
@@ -17,7 +17,7 @@ const LineChart = ({ chartData }) => {
         {
           label: "Price(USD)",
           data: chartData[index]?.prices,
-          fill: true,
+          fill: false,
           borderColor: "rgb(58, 96, 115)",
         },
       ],
