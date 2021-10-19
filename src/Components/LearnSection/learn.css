@@ -1,0 +1,90 @@
+.learn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7%;
+  min-height: 70vh;
+}
+
+.learn-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.learn-right > h2 {
+  margin: 5% 0;
+}
+
+.learn-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 70vh;
+}
+
+.learn-circle-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25em;
+  width: 25em;
+  background: var(--main-color);
+  background: var(--main-bkg);
+  background: var(--main-bkg-browsers);
+  border-radius: 999px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  z-index: 1;
+}
+.learn-circle-main::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 24.5em;
+  width: 24.5em;
+  background: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  border-radius: 999px;
+}
+
+.learn-circle-main > h1 {
+  font-size: 2rem;
+  z-index: 2;
+}
+.learn-icon {
+  font-size: 4rem !important;
+  color: var(--secondary-color);
+  margin: 0 10px;
+  z-index: 2;
+  animation: icon 2s infinite alternate-reverse;
+}
+.learn-icon:nth-child(1) {
+  animation-delay: 1s;
+}
+.learn-icon:nth-child(2) {
+  animation-delay: 2s;
+}
+.learn-icon:nth-child(3) {
+  animation-delay: 3s;
+}
+.learn-icon:nth-child(4) {
+  animation-delay: 4s;
+}
+
+@keyframes icon {
+  0% {
+  }
+
+  100% {
+    color: #29424e;
+  }
+}

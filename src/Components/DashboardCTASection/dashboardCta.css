@@ -1,0 +1,62 @@
+.dashboard-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  min-height: 75vh;
+}
+
+.dashboard-cta-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.dashboard-cta-right > h2 {
+  margin: 5% 0;
+}
+
+.dashboard-cta-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 70vh;
+}
+.dashboard-cta-chart-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.dashboard-cta-chart-container {
+  width: 20vw;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.dashboard-cta-middle-chart-container {
+  width: 30vw;
+  margin-bottom: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+@media only screen and (max-width: 900px) {
+  .dashboard-cta {
+    flex-direction: column-reverse;
+  }
+
+  .dashboard-cta-right {
+    align-items: center;
+    margin-bottom: 10%;
+  }
+  .dashboard-cta-chart-wrapper {
+    display: none;
+  }
+  .dashboard-cta-middle-chart-container {
+    width: 75vw;
+  }
+}
