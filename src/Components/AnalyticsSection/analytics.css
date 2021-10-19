@@ -34,3 +34,23 @@
 .analytics-top-five-sparkline {
   flex: 1;
 }
+
+@media only screen and (max-width: 1400px) {
+  .analytics-container {
+    display: grid;
+    align-self: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .analytics-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .analytics-top-five {
+    flex-direction: row;
+  }
+  .analytics-top-five-header {
+    flex: 1;
+    justify-content: space-around;
+  }
+}

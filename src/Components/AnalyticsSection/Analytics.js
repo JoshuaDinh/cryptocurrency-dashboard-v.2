@@ -53,7 +53,7 @@ const Analytics = ({ coinList }) => {
         <div key={coin.id} className="analytics-top-five">
           <div className="analytics-top-five-header">
             <img src={coin.image} alt="#" className="analytics-top-five-img" />
-            <p>{coin.name}</p>
+            <h2>{coin.name}</h2>
             <div className="analytics-top-five-data">
               <span>MarketCap : {format(coin.market_cap)}</span>
             </div>
