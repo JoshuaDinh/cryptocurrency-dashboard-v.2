@@ -27,4 +27,12 @@
   text-decoration: none;
   color: black;
   padding: 10px;
+  border: 1px solid transparent;
+}
+.nav-link:hover {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.nav-link-active {
+  border-bottom: 1px solid var(--secondary-color);
 }

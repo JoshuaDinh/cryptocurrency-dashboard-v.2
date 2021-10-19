@@ -22,3 +22,11 @@
 .discover-card-updated {
   font-size: 0.7rem;
 }
+
+.discover-card > p {
+  color: var(--main-color);
+}
+
+.discover-card-title {
+  color: #000000;
+}

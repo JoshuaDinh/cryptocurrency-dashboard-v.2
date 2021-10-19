@@ -14,20 +14,34 @@ const Navigation = () => {
         Blockchain
       </div>
       <div className="nav-link-container">
-        <NavLink to="/" className="nav-link">
+        <NavLink
+          activeClassName="nav-link-active"
+          exact
+          to="/"
+          className="nav-link"
+        >
           Home
         </NavLink>
-        <NavLink to="/Dashboard" className="nav-link">
+        <NavLink
+          activeClassName="nav-link-active"
+          to="/Dashboard"
+          className="nav-link"
+        >
           Dashboard
         </NavLink>
-        <NavLink to="/DigitalAssets" className="nav-link">
+        <NavLink
+          activeClassName="nav-link-active"
+          to="/DigitalAssets"
+          className="nav-link"
+        >
           Assets
         </NavLink>
-        <NavLink to="/LearnMore" className="nav-link">
+        <NavLink
+          activeClassName="nav-link-active"
+          to="/LearnMore"
+          className="nav-link"
+        >
           Learn
-        </NavLink>
-        <NavLink to="/" className="nav-link">
-          other
         </NavLink>
       </div>
     </nav>

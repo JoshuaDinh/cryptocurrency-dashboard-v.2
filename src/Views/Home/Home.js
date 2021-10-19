@@ -1,11 +1,11 @@
 import React from "react";
 import "./home.css";
 import Navigation from "Components/Navigation/Navigation";
-import DashboardCta from "../../Components/DashboardCTA/DashboardCta";
-import Hero from "../../Components/Hero/Hero";
-import Explore from "../../Components/Explore/Explore";
-import Learn from "../../Components/Learn/Learn";
-import Analytics from "../../Components/Analytics/Analytics";
+import DashboardCta from "../../Components/DashboardCTASection/DashboardCta";
+import Hero from "../../Components/HeroSection/Hero";
+import Explore from "../../Components/ExploreSection/Explore";
+import Learn from "../../Components/LearnSection/Learn";
+import Analytics from "../../Components/AnalyticsSection/Analytics";
 
 const Home = ({ coinList }) => {
   return (

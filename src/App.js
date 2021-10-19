@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/Dashboard">
           <Dashboard coinList={coinList} />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home coinList={coinList} />
         </Route>
       </Switch>

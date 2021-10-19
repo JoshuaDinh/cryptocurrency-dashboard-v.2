@@ -1,9 +1,9 @@
 import React from "react";
 import "./discoverCard.css";
-import moment from "moment";
 import { format, determineColor } from "../../Utilities/Utilities";
 
 const DiscoverCard = ({ coinList, selectedCoin }) => {
+  console.log(coinList);
   function updateDiscoverCard() {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
@@ -19,13 +19,21 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
           <>
             <div className="discover-card">
               <p>
-                Market Cap :<span> {format(market_cap)}</span>
+                Market Cap :
+                <span className="discover-card-title">
+                  {format(market_cap)}
+                </span>
               </p>
               <p>
-                24hhr Change :<span> {format(market_cap_change_24h)}</span>
+                24hr MC Change :
+                <span
+                  className={determineColor(market_cap_change_percentage_24h)}
+                >
+                  {format(market_cap_change_24h)}
+                </span>
               </p>
               <p>
-                24hr Change % :
+                24hr MC Change % :
                 <span
                   className={determineColor(market_cap_change_percentage_24h)}
                 >
@@ -35,14 +43,25 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
             </div>
             <div className="discover-card">
               <p>
-                Circulating Supply : <span>{format(circulating_supply)}</span>
+                Circulating Supply :
+                <span className="discover-card-title">
+                  {format(circulating_supply)}
+                </span>
               </p>
               <p>
-                Max Supply : <span>{format(max_supply)}</span>
+                Max Supply :{" "}
+                <span className="discover-card-title">
+                  {format(max_supply)}
+                </span>
               </p>
             </div>
             <div className="discover-card">
-              <p>Total Volume : {format(total_volume)}</p>
+              <p>
+                Total Volume :{" "}
+                <span className="discover-card-title">
+                  {format(total_volume)}
+                </span>
+              </p>
             </div>
           </>
         );

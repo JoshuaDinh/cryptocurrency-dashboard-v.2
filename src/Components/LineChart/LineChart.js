@@ -17,7 +17,7 @@ const LineChart = ({ chartData }) => {
         {
           label: "Price(USD)",
           data: chartData[index]?.prices,
-          fill: false,
+          fill: true,
           borderColor: "rgb(58, 96, 115)",
         },
       ],
