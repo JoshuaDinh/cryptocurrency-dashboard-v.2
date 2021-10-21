@@ -2,18 +2,27 @@
   font-size: 0.9rem;
   overflow-y: scroll;
   text-align: center;
-}
-
-.mc-percentage-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  margin-right: 25px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.mc-percentage-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.mc-percentage-row-left {
+  display: flex;
+  align-items: center;
+}
+
 .mc-percentage-item {
-  flex: 1;
   display: flex;
   align-items: center;
   height: 50px;

@@ -9,11 +9,9 @@
   font-size: 1.2rem;
   border-radius: 5px;
   color: black;
-  transition: 0.75s;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .link:hover {
-  transform-origin: left;
   background: var(--main-color);
   background: var(--main-bkg);
   background: var(--main-bkg-browsers);
@@ -30,7 +28,10 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .dark-link:hover {
-  transform: scale(1.35);
+  color: var(--main-color);
+  background: var(--secondary-color);
+  background: var(--secondary-bkg);
+  background: var(--secondary-bkg-browsers);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

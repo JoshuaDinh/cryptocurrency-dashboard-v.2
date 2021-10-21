@@ -11,6 +11,7 @@ import PieChart from "Components/PieChart/PieChart";
 import BarChart from "Components/BarChart/BarChart";
 import MarketCapPercentage from "Components/MarketCapPercentage/MarketCapPercentage";
 import DoughnutChart from "Components/DoughnutChart/DoughnutChart";
+import ExploreSection from "Components/ExploreSection/Explore";
 
 const Dashboard = ({ coinList }) => {
   const [selectedCoin, setSelectedCoin] = useState("bitcoin");
@@ -72,6 +73,7 @@ const Dashboard = ({ coinList }) => {
                 <Table coinList={coinList} setSelectedCoin={setSelectedCoin} />
                 <LineChart chartData={chartData} />
               </div>
+
               <DiscoverCard coinList={coinList} selectedCoin={selectedCoin} />
             </div>
           </div>
@@ -79,12 +81,15 @@ const Dashboard = ({ coinList }) => {
           <div className="market-cap">
             <MarketCapTopFive coinList={coinList} />
             <div className="mc-details">
-              <div className="mc-details-chart-container">
-                <PieChart coinList={coinList} />
-                <DoughnutChart coinList={coinList} />
-              </div>
-              <BarChart coinList={coinList} />
+              {" "}
               <MarketCapPercentage coinList={coinList} />
+              <div className="mc-details-chart-container">
+                <div className="mc-charts-container">
+                  <DoughnutChart coinList={coinList} />
+                  <PieChart coinList={coinList} />
+                </div>
+                <BarChart coinList={coinList} />
+              </div>
             </div>
           </div>
         </div>

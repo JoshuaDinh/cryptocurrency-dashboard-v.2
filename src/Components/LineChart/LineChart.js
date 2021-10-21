@@ -10,7 +10,13 @@ const LineChart = ({ chartData }) => {
     label.push(i);
   }
 
-  function data(index) {
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(500, 0, 400, 0);
+    gradient.addColorStop(1, "rgb(58, 96, 115, 0.9)");
+    gradient.addColorStop(0, "rgb(22, 34, 42,0.9)");
+
     return {
       labels: label,
       datasets: [
@@ -18,15 +24,17 @@ const LineChart = ({ chartData }) => {
           label: "Price(USD)",
           data: chartData[index]?.prices,
           fill: true,
-          borderColor: "rgb(58, 96, 115)",
+          borderColor: "rgb(0, 0, 0, 0.4)",
+          backgroundColor: gradient,
         },
       ],
     };
-  }
+  };
 
   const options = {
     maintainAspectRatio: false,
     responsive: true,
+    elements: { point: { radius: 2 } },
     scales: {
       y: {
         grid: {
@@ -79,7 +87,7 @@ const LineChart = ({ chartData }) => {
           </h4>
         </div>
         <div className="line-canvas-container">
-          <Line data={data(index)} options={options} />
+          <Line data={data} options={options} />
         </div>
       </div>
     </>

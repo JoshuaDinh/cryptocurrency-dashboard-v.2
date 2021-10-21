@@ -1,17 +1,13 @@
 import React from "react";
 import "./navigation.css";
+import Logo from "../../images/icon.png";
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-logo">
-        <img
-          src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/krinnxb23kgp75s0jyhp"
-          alt=""
-          className="logo"
-        />
-        Blockchain
+        <img src={Logo} alt="" className="logo" />
       </div>
       <div className="nav-link-container">
         <NavLink

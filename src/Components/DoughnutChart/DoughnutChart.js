@@ -5,10 +5,16 @@ import "./doughnut.css";
 const options = {
   maintainAspectRatio: false,
   responsive: true,
+  plugins: {
+    title: {
+      display: true,
+      text: "Top 5 by Market Cap",
+    },
+  },
   scales: {
     y: {
       grid: {
-        display: true,
+        display: false,
       },
       ticks: { display: false },
     },
@@ -23,40 +29,43 @@ const options = {
 };
 
 const DoughnutChart = ({ coinList }) => {
-  const data = {
-    labels: [
-      coinList[0]?.name,
-      coinList[1]?.name,
-      coinList[2]?.name,
-      coinList[3]?.name,
-      coinList[4]?.name,
-    ],
-    datasets: [
-      {
-        data: [
-          coinList[0]?.market_cap,
-          coinList[1]?.market_cap,
-          coinList[2]?.market_cap,
-          coinList[3]?.market_cap,
-          coinList[4]?.market_cap,
-        ],
-        backgroundColor: [
-          "rgb(58, 96, 115)",
-          "rgb(22, 34, 42)",
-          "rgb(10, 102, 148)",
-          "rgb(153, 154, 155)",
-          "rgb(219, 159, 30)",
-        ],
-        borderWidth: 1,
-      },
-    ],
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 180);
+    gradient.addColorStop(1, "rgb(58, 96, 115, 0.9)");
+    gradient.addColorStop(0, "rgb(22, 34, 42,0.9)");
+    return {
+      labels: [
+        coinList[0]?.name,
+        coinList[1]?.name,
+        coinList[2]?.name,
+        coinList[3]?.name,
+        coinList[4]?.name,
+      ],
+      datasets: [
+        {
+          data: [
+            coinList[0]?.market_cap,
+            coinList[1]?.market_cap,
+            coinList[2]?.market_cap,
+            coinList[3]?.market_cap,
+            coinList[4]?.market_cap,
+          ],
+          backgroundColor: [
+            gradient,
+            "rgb(22, 34, 42)",
+            "rgb(58, 96, 115, 0.5)",
+            "rgb(58, 96, 115, 0.9)",
+            "rgb(22, 34, 42,0.9)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
   };
   return (
     <div className="doughnut">
-      <div className="tooltip">
-        <h3>Top 5 by MarketCap</h3>
-      </div>
-
       <Doughnut data={data} options={options} />
     </div>
   );

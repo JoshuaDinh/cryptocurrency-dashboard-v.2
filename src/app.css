@@ -15,8 +15,19 @@
   ); /* Chrome 10-25, Safari 5.1-6 */
   --main-bkg-browsers: linear-gradient(
     to right,
-    #3a6073,
-    #16222a
+    rgb(58, 96, 115),
+    rgb(22, 34, 42)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  --secondary-bkg: -webkit-linear-gradient(
+    to right,
+    rgb(219, 159, 30),
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --secondary-bkg-browsers: linear-gradient(
+    to right,
+    rgb(219, 159, 30),
+    #ece9e6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   --secondary-color: rgb(219, 159, 30);
 }
@@ -31,32 +42,4 @@ a {
 
 .green {
   color: green;
-}
-
-.tooltip {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 2%;
-  background: #16222a; /* fallback for old browsers */
-  color: white;
-  background: -webkit-linear-gradient(
-    to right,
-    rgb(58, 96, 115, 0.75),
-    rgb(22, 34, 42, 0.75)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    rgb(58, 96, 115, 0.75),
-    rgb(22, 34, 42, 0.75)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 25px;
-}
-
-@media only screen and (max-width: 1150px) {
 }

@@ -4,8 +4,10 @@ import { format } from "../../Utilities/Utilities";
 import { Line } from "react-chartjs-2";
 
 const options = {
-  legends: {
-    display: false,
+  plugins: {
+    legend: {
+      display: false,
+    },
   },
   elements: {
     point: {
@@ -42,7 +44,6 @@ const Analytics = ({ coinList }) => {
         labels: label,
         datasets: [
           {
-            label: "Price",
             data: coin.sparkline_in_7d.price,
             fill: true,
             borderColor: " #16222a",

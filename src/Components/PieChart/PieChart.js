@@ -1,10 +1,16 @@
 import React from "react";
 import "./pieChart.css";
-import { Pie } from "react-chartjs-2";
+import { PolarArea } from "react-chartjs-2";
 
 const options = {
   maintainAspectRatio: false,
   responsive: true,
+  plugins: {
+    title: {
+      display: true,
+      text: "Top 5 by Price",
+    },
+  },
   scales: {
     y: {
       grid: {
@@ -23,43 +29,56 @@ const options = {
 };
 
 const PieChart = ({ coinList }) => {
-  const data = {
-    labels: [
-      coinList[0]?.name,
-      coinList[1]?.name,
-      coinList[2]?.name,
-      coinList[3]?.name,
-      coinList[4]?.name,
-    ],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [
-          coinList[0]?.market_cap_change_percentage_24h,
-          coinList[1]?.market_cap_change_percentage_24h,
-          coinList[2]?.market_cap_change_percentage_24h,
-          coinList[3]?.market_cap_change_percentage_24h,
-          coinList[4]?.market_cap_change_percentage_24h,
-        ],
-        backgroundColor: [
-          "rgb(58, 96, 115)",
-          "rgb(22, 34, 42)",
-          "rgb(10, 102, 148)",
-          "rgb(153, 154, 155)",
-          "rgb(219, 159, 30)",
-        ],
-      },
-    ],
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 180);
+    gradient.addColorStop(1, "rgb(58, 96, 115, 0.9)");
+    gradient.addColorStop(0, "rgb(22, 34, 42,0.9)");
+
+    const sortedArray = [...coinList];
+    const arr = sortedArray.sort((a, b) => {
+      return b.current_price - a.current_price;
+    });
+
+    let sortedData = [];
+    const sortedArr = sortedArray.slice(0, 5).map((coin) => {
+      sortedData.push(coin);
+    });
+
+    console.log(sortedData);
+    return {
+      labels: [
+        sortedData[0]?.name,
+        sortedData[1]?.name,
+        sortedData[2]?.name,
+        sortedData[3]?.name,
+        sortedData[4]?.name,
+      ],
+      datasets: [
+        {
+          data: [
+            sortedData[0]?.current_price,
+            sortedData[1]?.current_price,
+            sortedData[2]?.current_price,
+            sortedData[3]?.current_price,
+            sortedData[4]?.current_price,
+          ],
+          backgroundColor: [
+            gradient,
+            "rgb(22, 34, 42)",
+            "rgb(58, 96, 115, 0.5)",
+            "rgb(58, 96, 115, 0.9)",
+            "rgb(22, 34, 42,0.9)",
+          ],
+        },
+      ],
+    };
   };
   return (
-    <>
-      <div className="pie-chart">
-        <div className="tooltip">
-          <h3>MarketCap 24HR Change</h3>
-        </div>
-        <Pie data={data} options={options} />
-      </div>
-    </>
+    <div className="pie-chart">
+      <PolarArea data={data} options={options} />
+    </div>
   );
 };
 

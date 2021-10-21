@@ -110,12 +110,12 @@ const DashboardCta = () => {
         </div>
       </div>
       <div className="dashboard-cta-right">
-        <h1>Check out our free Dashboard</h1>
+        <h1>Interested in numbers?</h1>
         <h2>
-          & Analyze what the market has to say about digital assets and their
+          Analyze what the market has to say about digital assets and their
           worth as an investment.
         </h2>
-        <Link title="View Analytics" link="/Dashboard" dark />{" "}
+        <Link title="View Dashboard" link="/Dashboard" dark />{" "}
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const Learn = () => {
           & learn about the innovative technologies that power their
           infastructure
         </h2>
-        <Link title="Learn" link="/LearnMore" dark />
+        <Link title="Learn More" link="/LearnMore" />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./search.css";
+import Logo from "../../images/icon.png";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Search = ({ setSelectedCoin, selectedCoin }) => {
@@ -22,6 +23,7 @@ const Search = ({ setSelectedCoin, selectedCoin }) => {
 
   return (
     <div className="search">
+      <img src={Logo} alt="" className="logo" />
       <form className="search-form">
         <SearchIcon className="search-icon" />
         <input

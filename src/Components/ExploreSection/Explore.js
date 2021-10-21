@@ -47,7 +47,7 @@ const Explore = ({ coinList }) => {
     <div className="explore">
       <div className="explore-left">
         <h1>Explore digital assets, like Bitcoin, Ethereum and Dogecoin</h1>
-        <h2>& view the statistics on their performence in the market place.</h2>
+        <h2>& view their daily performence in the market place.</h2>
         <Link title="See more assets" link="/DigitalAssets" dark />
       </div>
       <div className="explore-right">

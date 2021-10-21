@@ -19,13 +19,13 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
           <>
             <div className="discover-card">
               <p>
-                Market Cap :
+                <span className="discover-card-title">Market Cap :</span>
                 <span className="discover-card-title">
                   {format(market_cap)}
                 </span>
               </p>
               <p>
-                24hr MC Change :
+                <span> 24hr MC Change :</span>{" "}
                 <span
                   className={determineColor(market_cap_change_percentage_24h)}
                 >
@@ -33,31 +33,29 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
                 </span>
               </p>
               <p>
-                24hr MC Change % :
+                <span>24hr MC Change % :</span>
                 <span
                   className={determineColor(market_cap_change_percentage_24h)}
                 >
                   {market_cap_change_percentage_24h}
                 </span>
               </p>
-            </div>
-            <div className="discover-card">
               <p>
-                Circulating Supply :
+                <span className="discover-card-title">
+                  Circulating Supply :
+                </span>
                 <span className="discover-card-title">
                   {format(circulating_supply)}
                 </span>
               </p>
               <p>
-                Max Supply :{" "}
+                <span className="discover-card-title">Max Supply : </span>
                 <span className="discover-card-title">
                   {format(max_supply)}
                 </span>
-              </p>
-            </div>
-            <div className="discover-card">
+              </p>{" "}
               <p>
-                Total Volume :{" "}
+                <span className="discover-card-title">Total Volume : </span>
                 <span className="discover-card-title">
                   {format(total_volume)}
                 </span>

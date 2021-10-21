@@ -9,11 +9,13 @@
   flex-direction: column;
   flex: 1;
   margin: 0 5px;
-  /* color: whitesmoke; */
-  /* background: var(--main-color);
-  background: var(--main-bkg);
-  background: var(--main-bkg-browsers); */
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.mc-top-five:first-child {
+  margin-left: 0;
+}
+.mc-top-five:last-child {
+  margin-right: 0;
 }
 
 .mc-top-five-header {
@@ -23,6 +25,9 @@
   justify-content: space-between;
   padding: 10px;
 }
+.mc-top-five-header > p {
+  margin: 10px 0;
+}
 
 .mc-top-five-data {
   font-size: 0.9rem;
@@ -30,8 +35,4 @@
 .mc-top-five-img {
   height: 2.5em;
   object-fit: contain;
-}
-
-.mc-top-five-sparkline {
-  flex: 1;
 }

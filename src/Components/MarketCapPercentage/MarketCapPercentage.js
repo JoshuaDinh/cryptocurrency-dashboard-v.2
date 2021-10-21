@@ -8,8 +8,10 @@ const MarketCapPercentage = ({ coinList }) => {
     return coinList.map((coin) => {
       return (
         <div className="mc-percentage-row ">
-          <img className="mc-percentage-img " src={coin.image} alt="" />
-          <h4 className="mc-percentage-item">{coin.name}</h4>
+          <div className="mc-percentage-row-left">
+            <img className="mc-percentage-img " src={coin.image} alt="" />
+            <h4 className="mc-percentage-item">{coin.name}</h4>
+          </div>
           <span
             className={`mc-percentage-item ${determineColor(
               coin.market_cap_change_percentage_24h
@@ -24,9 +26,12 @@ const MarketCapPercentage = ({ coinList }) => {
   return (
     <div className="mc-percentage">
       <div className="mc-percentage-row ">
-        <span className="mc-percentage-img ">#</span>
-        <h4 className="mc-percentage-item">Name</h4>
-        <span className={`mc-percentage-item `}>Change %</span>
+        <div className="mc-percentage-row-left">
+          <span className="mc-percentage-img ">#</span>
+          <h4 className="mc-percentage-item">Name</h4>
+        </div>
+
+        <span className={`mc-percentage-item `}>MarketCap Change %</span>
       </div>
       {renderMarketTable(coinList)}
     </div>
