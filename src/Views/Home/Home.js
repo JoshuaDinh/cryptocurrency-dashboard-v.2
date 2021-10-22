@@ -14,7 +14,6 @@ const Home = ({ coinList }) => {
       <Hero coinList={coinList} />
       <DashboardCta coinList={coinList} />
       <Explore coinList={coinList} />
-      {/* <Analytics coinList={coinList} /> */}
       <Learn />
     </div>
   );

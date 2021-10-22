@@ -18,18 +18,38 @@
   min-height: 7vh;
   height: 100%;
   background: #f5f8ff;
+  animation: slide 420s infinite linear alternate-reverse;
+}
+
+.hero-slide-image {
+  max-width: 1em;
+  object-fit: contain;
 }
 
 .hero-slide-item {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  min-width: 13vw;
-  margin-right: 25px;
+  justify-content: center;
+  min-width: 16vw;
+  margin-right: 15px;
+  font-size: 0.9rem;
 }
-.hero-slide-item > span:nth-child(3) {
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-1600vw);
+  }
+}
+
+.hero-slide-item > span:nth-child(4) {
   font-size: 0.8rem;
+}
+.hero-slide-item > span {
+  margin: 0 5px;
 }
 
 .hero > h1 {
