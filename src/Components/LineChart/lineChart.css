@@ -3,15 +3,15 @@
   flex-direction: column;
   margin-right: 20px;
   margin-top: 20px;
-  max-height: 45vh;
+  height: 53vh;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .line-canvas-container {
-  width: 60vw;
-  height: 43vh;
+  width: 45vw;
+  height: 100%;
 }
 
 .days-container {
@@ -34,7 +34,7 @@
     rgb(22, 34, 42)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-top: 1px solid var(--secondary-color);
-  color: white !important;
+  color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -55,4 +55,10 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .line-canvas-container {
+    width: 100%;
+  }
 }

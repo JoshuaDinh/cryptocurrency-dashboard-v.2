@@ -1,56 +1,11 @@
 import React, { useState } from "react";
 import "./lineChart.css";
 import { Line } from "react-chartjs-2";
+import { LineChartData } from "../../ChartData/data";
+import { LineChartOptions } from "../../ChartData/ChartConfig";
 
 const LineChart = ({ chartData }) => {
   const [index, setIndex] = useState(4);
-
-  let label = [];
-  for (let i = 0; i < chartData[index]?.prices.length; i++) {
-    label.push(i);
-  }
-
-  const data = (canvas) => {
-    const ctx = canvas.getContext("2d");
-
-    let gradient = ctx.createLinearGradient(500, 0, 400, 0);
-    gradient.addColorStop(1, "rgb(58, 96, 115, 0.9)");
-    gradient.addColorStop(0, "rgb(22, 34, 42,0.9)");
-
-    return {
-      labels: label,
-      datasets: [
-        {
-          label: "Price(USD)",
-          data: chartData[index]?.prices,
-          fill: true,
-          borderColor: "rgb(0, 0, 0, 0.4)",
-          backgroundColor: gradient,
-        },
-      ],
-    };
-  };
-
-  const options = {
-    maintainAspectRatio: false,
-    responsive: true,
-    elements: { point: { radius: 2 } },
-    scales: {
-      y: {
-        grid: {
-          display: true,
-        },
-        ticks: { display: true },
-      },
-      x: {
-        beginAtZero: true,
-        grid: {
-          display: true,
-        },
-      },
-    },
-  };
-
   return (
     <>
       <div className="line-chart-container">
@@ -87,7 +42,10 @@ const LineChart = ({ chartData }) => {
           </h4>
         </div>
         <div className="line-canvas-container">
-          <Line data={data} options={options} />
+          <Line
+            data={(canvas) => LineChartData(canvas, index, chartData)}
+            options={LineChartOptions}
+          />
         </div>
       </div>
     </>

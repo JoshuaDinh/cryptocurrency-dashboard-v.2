@@ -70,26 +70,22 @@ const Dashboard = ({ coinList }) => {
             <DiscoverHeader coinList={coinList} selectedCoin={selectedCoin} />
             <div className="discover-details">
               <div className="discover-details-left">
-                <Table coinList={coinList} setSelectedCoin={setSelectedCoin} />
+                <DiscoverCard coinList={coinList} selectedCoin={selectedCoin} />
                 <LineChart chartData={chartData} />
               </div>
-
-              <DiscoverCard coinList={coinList} selectedCoin={selectedCoin} />
+              <Table coinList={coinList} setSelectedCoin={setSelectedCoin} />
             </div>
           </div>
 
-          <div className="market-cap">
-            <MarketCapTopFive coinList={coinList} />
-            <div className="mc-details">
-              {" "}
-              <MarketCapPercentage coinList={coinList} />
-              <div className="mc-details-chart-container">
-                <div className="mc-charts-container">
-                  <DoughnutChart coinList={coinList} />
-                  <PieChart coinList={coinList} />
-                </div>
-                <BarChart coinList={coinList} />
+          <MarketCapTopFive coinList={coinList} />
+          <div className="mc-details">
+            <MarketCapPercentage coinList={coinList} />
+            <div className="mc-details-chart-container">
+              <div className="mc-charts-container">
+                <DoughnutChart coinList={coinList} />
+                <PieChart coinList={coinList} />
               </div>
+              <BarChart coinList={coinList} />
             </div>
           </div>
         </div>

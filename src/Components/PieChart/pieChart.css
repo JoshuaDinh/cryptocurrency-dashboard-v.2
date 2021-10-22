@@ -13,3 +13,9 @@ h3 {
 .pie-chart:hover .tooltip {
   display: none;
 }
+
+@media only screen and (max-width: 1000px) {
+  .pie-chart {
+    min-height: 50vh;
+  }
+}

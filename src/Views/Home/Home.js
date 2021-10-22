@@ -11,10 +11,10 @@ const Home = ({ coinList }) => {
   return (
     <div className="home">
       <Navigation />
-      <Hero />
+      <Hero coinList={coinList} />
       <DashboardCta coinList={coinList} />
       <Explore coinList={coinList} />
-      <Analytics coinList={coinList} />
+      {/* <Analytics coinList={coinList} /> */}
       <Learn />
     </div>
   );

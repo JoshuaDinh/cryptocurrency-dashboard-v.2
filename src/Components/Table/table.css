@@ -7,11 +7,14 @@
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.table {
+  width: 100%;
+}
+
 tr:hover {
   color: whitesmoke;
   cursor: pointer;
   background: #16222a; /* fallback for old browsers */
-
   background: -webkit-linear-gradient(
     to right,
     rgb(58, 96, 115, 0.75),
@@ -38,4 +41,11 @@ td {
 
 .table-coin-img {
   height: 2em;
+}
+
+@media only screen and (max-width: 1350px) {
+  .table-container {
+    height: 35vh;
+    margin-bottom: 20px;
+  }
 }

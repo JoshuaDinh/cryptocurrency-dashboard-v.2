@@ -33,3 +33,9 @@
   width: 2em;
   object-fit: contain;
 }
+
+@media only screen and (max-width: 1000px) {
+  .mc-percentage {
+    min-height: 50vh;
+  }
+}

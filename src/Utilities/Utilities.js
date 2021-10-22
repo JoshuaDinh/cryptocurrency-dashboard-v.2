@@ -5,7 +5,7 @@ export function determineColor(coin) {
 }
 
 export function format(number) {
-  return numeral(number).format("$0,0.");
+  return numeral(number).format("0,0.00");
 }
 
 export function formatShortened(number) {

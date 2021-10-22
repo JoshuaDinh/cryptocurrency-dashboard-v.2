@@ -3,7 +3,6 @@ import "./discoverCard.css";
 import { format, determineColor } from "../../Utilities/Utilities";
 
 const DiscoverCard = ({ coinList, selectedCoin }) => {
-  console.log(coinList);
   function updateDiscoverCard() {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
@@ -16,16 +15,16 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
           market_cap_change_24h,
         } = coin;
         return (
-          <>
+          <div className="discover-card-container">
             <div className="discover-card">
               <p>
-                <span className="discover-card-title">Market Cap :</span>
+                Market Cap :
                 <span className="discover-card-title">
                   {format(market_cap)}
                 </span>
               </p>
               <p>
-                <span> 24hr MC Change :</span>{" "}
+                24hr MC Change :
                 <span
                   className={determineColor(market_cap_change_percentage_24h)}
                 >
@@ -33,35 +32,29 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
                 </span>
               </p>
               <p>
-                <span>24hr MC Change % :</span>
+                24hr MC Change % :
                 <span
                   className={determineColor(market_cap_change_percentage_24h)}
                 >
                   {market_cap_change_percentage_24h}
                 </span>
               </p>
+            </div>
+            <div className="discover-card">
               <p>
-                <span className="discover-card-title">
-                  Circulating Supply :
-                </span>
+                Circulating Supply :
                 <span className="discover-card-title">
                   {format(circulating_supply)}
                 </span>
               </p>
               <p>
-                <span className="discover-card-title">Max Supply : </span>
+                Max Supply :{" "}
                 <span className="discover-card-title">
                   {format(max_supply)}
                 </span>
-              </p>{" "}
-              <p>
-                <span className="discover-card-title">Total Volume : </span>
-                <span className="discover-card-title">
-                  {format(total_volume)}
-                </span>
               </p>
             </div>
-          </>
+          </div>
         );
       }
     }
@@ -71,3 +64,14 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
 };
 
 export default DiscoverCard;
+
+{
+  /* <>
+<div className="discover-card-container">
+  <div className="discover-card">hey</div>
+  <div className="discover-card">hey</div>
+  <div className="discover-card">hey</div>
+  <div className="discover-card">hey</div>
+</div>
+</> */
+}
