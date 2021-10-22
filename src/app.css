@@ -47,7 +47,7 @@ a {
 section {
   display: flex;
   height: 100vh;
-  padding: 5% 2%;
+  padding: 2% 5%;
 }
 
 .section-data,
