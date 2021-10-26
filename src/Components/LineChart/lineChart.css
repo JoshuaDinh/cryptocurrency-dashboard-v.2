@@ -3,7 +3,7 @@
   flex-direction: column;
   margin-right: 20px;
   margin-top: 20px;
-  height: 53vh;
+  height: 57vh;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -19,6 +19,11 @@
   align-items: center;
   justify-content: space-evenly;
   height: 10vh;
+}
+
+.day-item {
+  font-size: 0.8rem;
+  border-radius: 5px;
 }
 
 .day-item:hover {

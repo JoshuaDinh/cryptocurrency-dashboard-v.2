@@ -4,7 +4,6 @@ import "./hero.css";
 import { format, determineColor } from "../../Utilities/Utilities";
 
 function renderSlides(coinList) {
-  console.log(coinList);
   return coinList.map((coin) => {
     return (
       <div className="hero-slide-item">

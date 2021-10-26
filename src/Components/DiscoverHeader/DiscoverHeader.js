@@ -26,7 +26,7 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
               <h2>
                 {name} | {symbol}
               </h2>
-              <h2>{format(current_price)}</h2>
+              <h2>${format(current_price)}</h2>
               <span
                 className={determineColor(coin.price_change_percentage_24h)}
               >

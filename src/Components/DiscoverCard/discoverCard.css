@@ -9,8 +9,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  min-height: 150px;
-  max-height: 150px;
+  min-height: 120px;
+  max-height: 120px;
   padding: 10px;
   font-size: 0.9rem;
   background: #ece9e6; /* fallback for old browsers */

@@ -46,7 +46,8 @@ a {
 
 section {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   padding: 2% 5%;
 }
 
@@ -64,4 +65,14 @@ section {
 }
 .section-text-content > h1 {
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  section {
+    flex-direction: column-reverse;
+  }
+  .section-text-content {
+    align-items: center;
+    text-align: center;
+  }
 }

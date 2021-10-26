@@ -12,13 +12,18 @@
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
 }
 
+.hero > h3 {
+  margin-top: 15px;
+}
+
 .hero-slide-container {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   min-height: 7vh;
   height: 100%;
   background: #f5f8ff;
-  animation: slide 420s infinite linear alternate-reverse;
+  overflow-x: hidden;
 }
 
 .hero-slide-image {
@@ -32,8 +37,10 @@
   align-items: center;
   justify-content: center;
   min-width: 16vw;
-  margin-right: 15px;
+  width: 100%;
+  /* margin-right: 15px; */
   font-size: 0.9rem;
+  animation: slide 420s infinite linear alternate-reverse;
 }
 
 @keyframes slide {
@@ -41,7 +48,7 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-1600vw);
+    transform: translateX(1600vw);
   }
 }
 

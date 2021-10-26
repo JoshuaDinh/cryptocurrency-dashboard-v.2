@@ -1,5 +1,5 @@
 .learn-section {
-  height: 70vh;
+  min-height: 70vh;
   background: var(--main-color);
   background: var(--main-bkg);
   background: var(--main-bkg-browsers);
@@ -39,10 +39,6 @@
   border-radius: 999px;
 }
 
-.learn-circle-main > h1 {
-  font-size: 2rem;
-  z-index: 2;
-}
 .learn-icon {
   font-size: 4rem !important;
   color: var(--secondary-color);
@@ -72,27 +68,19 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
-  .learn {
-    height: 80vh;
-    color: var(--main-color);
+@media only screen and (max-width: 1200px) {
+  .learn-section {
+    flex-direction: column;
   }
-  .learn-left {
-    position: absolute;
-    opacity: 0.75;
+  .learn-circle-main {
+    width: 16em;
+    height: 16em;
   }
-  .learn-right {
-    text-align: center;
-    padding: 5%;
-    min-width: 100vw;
-
-    background: rgb(245, 245, 245, 0.75);
-    align-items: center;
-    z-index: 2;
+  .learn-circle-main::after {
+    width: 14em;
+    height: 14em;
   }
-  .learn-right > h2 {
-    margin: 2% 0;
-    opacity: 1;
-    z-index: 100;
+  .learn-icon {
+    font-size: 3rem !important;
   }
 }

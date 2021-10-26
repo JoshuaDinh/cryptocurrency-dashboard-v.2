@@ -20,7 +20,7 @@ export const options = {
 export const LineChartOptions = {
   maintainAspectRatio: false,
   responsive: true,
-  elements: { point: { radius: 0 } },
+  elements: { point: { radius: 2 } },
   scales: {
     y: {
       grid: {
