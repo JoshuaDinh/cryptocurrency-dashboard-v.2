@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./search.css";
-import Logo from "../../images/icon.png";
+import "./searchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Search = ({ setSelectedCoin, selectedCoin }) => {
+const SearchBar = ({ setSelectedCoin, selectedCoin }) => {
   const [input, setInput] = useState("");
 
   // Handle Inputs
@@ -22,13 +21,12 @@ const Search = ({ setSelectedCoin, selectedCoin }) => {
   }, [input]);
 
   return (
-    <div className="search">
-      <img src={Logo} alt="" className="logo" />
-      <form className="search-form">
-        <SearchIcon className="search-icon" />
+    <div className="search-bar">
+      <form className="search-bar-form">
+        <SearchIcon className="search-bar-icon" />
         <input
           onChange={(e) => handleInput(e)}
-          className="search-input"
+          className="search-bar-input"
           type="text"
           placeholder="Search for a Coin.."
           value={input}
@@ -38,4 +36,4 @@ const Search = ({ setSelectedCoin, selectedCoin }) => {
   );
 };
 
-export default Search;
+export default SearchBar;

@@ -1,10 +1,10 @@
-.discover-card-container {
+.detail-cards-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.discover-card {
+.detail-cards {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -13,27 +13,23 @@
   max-height: 120px;
   padding: 10px;
   font-size: 0.9rem;
-  background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 10px;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.discover-card:first-child {
+.detail-cards:first-child {
   margin-right: 15px;
 }
 
-.discover-card > p {
+.detail-cards > p {
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) {
+  .detail-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

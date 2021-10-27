@@ -1,9 +1,9 @@
 import React from "react";
-import "./discoverCard.css";
+import "./detailCards.css";
 import { format, determineColor } from "../../Utilities/Utilities";
 
-const DiscoverCard = ({ coinList, selectedCoin }) => {
-  function updateDiscoverCard() {
+const DetailCards = ({ coinList, selectedCoin }) => {
+  function updateDetailCards() {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
         const {
@@ -15,13 +15,11 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
           market_cap_change_24h,
         } = coin;
         return (
-          <div className="discover-card-container">
-            <div className="discover-card">
+          <div className="detail-cards-container">
+            <div className="detail-cards">
               <p>
                 Market Cap :
-                <span className="discover-card-title">
-                  {format(market_cap)}
-                </span>
+                <span className="detail-cards-title">{format(market_cap)}</span>
               </p>
               <p>
                 24hr MC Change :
@@ -40,18 +38,16 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
                 </span>
               </p>
             </div>
-            <div className="discover-card">
+            <div className="detail-cards">
               <p>
                 Circulating Supply :
-                <span className="discover-card-title">
+                <span className="detail-cards-title">
                   {format(circulating_supply)}
                 </span>
               </p>
               <p>
                 Max Supply :{" "}
-                <span className="discover-card-title">
-                  {format(max_supply)}
-                </span>
+                <span className="detail-cards-title">{format(max_supply)}</span>
               </p>
             </div>
           </div>
@@ -60,18 +56,7 @@ const DiscoverCard = ({ coinList, selectedCoin }) => {
     }
   }
 
-  return <div className="discover-card-container">{updateDiscoverCard()}</div>;
+  return <div className="detail-cards-container">{updateDetailCards()}</div>;
 };
 
-export default DiscoverCard;
-
-{
-  /* <>
-<div className="discover-card-container">
-  <div className="discover-card">hey</div>
-  <div className="discover-card">hey</div>
-  <div className="discover-card">hey</div>
-  <div className="discover-card">hey</div>
-</div>
-</> */
-}
+export default DetailCards;

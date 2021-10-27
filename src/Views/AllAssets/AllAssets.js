@@ -1,9 +1,9 @@
 import React from "react";
-import "./digitalAssets.css";
-import Navigation from "Components/Navigation/Navigation";
+import "./allAssets.css";
 import BasicCard from "Components/BasicCard/BasicCard";
+import SideNavigation from "Components/SideNavigation/SideNavigation";
 
-const DigitalAssets = ({ coinList }) => {
+const AllAssets = ({ coinList }) => {
   function renderAllDigitalAssets(coinList) {
     return coinList.map((coin) => {
       return (
@@ -18,13 +18,13 @@ const DigitalAssets = ({ coinList }) => {
     });
   }
   return (
-    <div className="digitalAssets">
-      <Navigation />
-      <div className="digitalAssetsContainer">
+    <div className="all-assets">
+      <SideNavigation />
+      <div className="all-assets-container  ">
         {renderAllDigitalAssets(coinList)}
       </div>
     </div>
   );
 };
 
-export default DigitalAssets;
+export default AllAssets;

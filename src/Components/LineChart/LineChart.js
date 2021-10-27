@@ -1,11 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./lineChart.css";
 import { Line } from "react-chartjs-2";
 import { LineChartData } from "../../ChartData/data";
 import { LineChartOptions } from "../../ChartData/ChartConfig";
 
-const LineChart = ({ chartData }) => {
+const LineChart = ({ selectedCoin }) => {
   const [index, setIndex] = useState(4);
+  const [chartData, setChartData] = useState([]);
+
+  useEffect(() => {
+    try {
+      async function fetchData() {
+        const oneDayResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1day&interval=hourly`
+        );
+        const responseOne = oneDayResponse.json();
+        const oneWeekResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=7day&interval=daily`
+        );
+        const responseTwo = oneWeekResponse.json();
+        const twoWeekResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=14&interval=daily`
+        );
+        const responseThree = twoWeekResponse.json();
+        const oneMonthResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=30&interval=daily`
+        );
+        const responseFour = oneMonthResponse.json();
+        const oneHrResponse = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1hr&interval=minute`
+        );
+        const responseFive = oneHrResponse.json();
+
+        const data = await Promise.all([
+          responseOne,
+          responseTwo,
+          responseThree,
+          responseFour,
+          responseFive,
+        ]);
+        setChartData(data);
+      }
+      if (selectedCoin) {
+        fetchData();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }, [selectedCoin]);
   return (
     <>
       <div className="line-chart-container">

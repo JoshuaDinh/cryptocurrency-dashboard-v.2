@@ -5,10 +5,8 @@ import { determineColor } from "Utilities/Utilities";
 const BasicCard = ({ image, title, percentage, operator, current_price }) => {
   return (
     <div className="basic-card">
-      <div className="basic-card-top">
-        <img src={image} alt="" className="basic-card-image" />
-        <h2>{title}</h2>
-      </div>
+      <img src={image} alt="" className="basic-card-image" />
+      <h3>{title}</h3>
       <h2>{current_price}</h2>
       <div className="basic-card-bottom">
         <h3 className={determineColor(percentage)}>

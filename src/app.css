@@ -43,36 +43,3 @@ a {
 .green {
   color: green;
 }
-
-section {
-  display: flex;
-  min-height: 100vh;
-  height: 100%;
-  padding: 2% 5%;
-}
-
-.section-data,
-.section-text-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  margin: 30px;
-}
-
-.section-text-content > h2 {
-  margin: 30px 0;
-}
-.section-text-content > h1 {
-  font-size: 2rem;
-}
-
-@media only screen and (max-width: 1200px) {
-  section {
-    flex-direction: column-reverse;
-  }
-  .section-text-content {
-    align-items: center;
-    text-align: center;
-  }
-}

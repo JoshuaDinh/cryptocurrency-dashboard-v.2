@@ -11,12 +11,15 @@ const SideNavigation = () => {
         </NavLink>
         <NavLink
           activeClassName="side-nav-active"
-          to="/Dashboard"
+          to="/Search"
           className="side-nav-link"
         >
-          Dashboard
+          Search
         </NavLink>
-        <NavLink to="/DigitalAssets" className="side-nav-link">
+        <NavLink to="/MarketCap" className="side-nav-link">
+          Market Cap
+        </NavLink>
+        <NavLink to="/AllAssets" className="side-nav-link">
           Assets
         </NavLink>
         <NavLink to="/LearnMore" className="side-nav-link">

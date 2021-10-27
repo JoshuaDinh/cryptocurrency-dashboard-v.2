@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./app.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Dashboard from "./Views/Dashboard/Dashboard";
-import Home from "./Views/Home/Home";
-import DigitalAssets from "Views/DigitalAssets/DigitalAssets";
-import LearnMore from "Views/LearnMore/LearnMore";
+import SearchCoins from "./Views/SearchCoins/SearchCoins";
+
+import AllAssets from "./Views/AllAssets/AllAssets";
 
 const App = () => {
   const [coinList, setCoinList] = useState([]);
@@ -27,17 +26,11 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/LearnMore">
-          <LearnMore />
-        </Route>
-        <Route path="/DigitalAssets">
-          <DigitalAssets coinList={coinList} />
-        </Route>
-        <Route path="/Dashboard">
-          <Dashboard coinList={coinList} />
-        </Route>
         <Route exact path="/">
-          <Home coinList={coinList} />
+          <SearchCoins coinList={coinList} />
+        </Route>
+        <Route path="/AllAssets">
+          <AllAssets coinList={coinList} />
         </Route>
       </Switch>
     </Router>
