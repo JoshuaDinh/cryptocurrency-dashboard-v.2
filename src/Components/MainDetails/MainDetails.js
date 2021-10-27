@@ -16,6 +16,7 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
           low_24h,
           high_24h,
           ath,
+          atl,
           last_updated,
         } = coin;
 
@@ -43,6 +44,9 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
                 </h5>
                 <h5>
                   All Time High <span className="green">${format(ath)}</span>
+                </h5>
+                <h5>
+                  All Time Low <span className="green">${format(atl)}</span>
                 </h5>
                 <span className="main-details-updated">
                   Last Updated at :

@@ -3,6 +3,9 @@
   align-items: center;
   max-height: 7vh;
   overflow-x: hidden;
+  box-shadow: 1px 0 7px rgb(22, 34, 420, 0.67) inset;
+  -webkit-box-shadow: 1px 0 7px rgb(22, 34, 420, 0.67) inset;
+  -moz-box-shadow: 1px 0 7px rgb(22, 34, 420, 0.67) inset;
 }
 
 .slide-image {
