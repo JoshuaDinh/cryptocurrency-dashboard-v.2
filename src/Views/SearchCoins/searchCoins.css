@@ -1,16 +1,15 @@
 .search-coins {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   max-height: 100vh;
-}
-
-.search-coins-container {
+  width: 92vw;
   padding: 0 2%;
 }
+
 .search-coins-content {
   display: flex;
-  max-height: 78vh;
+  max-height: 75vh;
   margin-top: 20px;
 }
 
@@ -21,16 +20,9 @@
   margin-right: 25px;
 }
 
-.day-item {
-  cursor: pointer;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-}
-
 @media only screen and (max-width: 1350px) {
   .search-coins {
-    max-width: 80vw;
+    min-width: 100vw;
   }
   .search-coins-content {
     flex-direction: column;
@@ -39,7 +31,7 @@
   }
 
   .search-coins-left {
-    margin: 0;
+    margin: 0px;
     height: 100%;
   }
 }

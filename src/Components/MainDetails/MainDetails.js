@@ -24,15 +24,15 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
             <div className="main-details-container">
               <div className="main-details-left">
                 <img src={image} alt="#" className="main-details-img" />
-                <h2>
+                <h3>
                   {name} | {symbol.toUpperCase()}
-                </h2>
-                <h2>${format(current_price)}</h2>
-                <span
+                </h3>
+                <h3>${format(current_price)}</h3>
+                <h5
                   className={determineColor(coin.price_change_percentage_24h)}
                 >
                   ({price_change_percentage_24h})
-                </span>
+                </h5>
               </div>
               <div className="main-details-right">
                 <h5>

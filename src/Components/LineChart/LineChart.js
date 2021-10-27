@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./lineChart.css";
 import { Line } from "react-chartjs-2";
-import { LineChartData } from "../../ChartData/data";
-import { LineChartOptions } from "../../ChartData/ChartConfig";
+import { LineChartOptions, LineChartData } from "../../ChartData/ChartConfig";
 
 const LineChart = ({ selectedCoin }) => {
   const [index, setIndex] = useState(4);
@@ -56,13 +55,13 @@ const LineChart = ({ selectedCoin }) => {
             className={`day-item ${index === 4 && "day-active"}`}
             onClick={() => setIndex(4)}
           >
-            1Hour
+            1 Hour
           </h4>
           <h4
             className={`day-item ${index === 0 && "day-active"}`}
             onClick={() => setIndex(0)}
           >
-            24Hours
+            24 Hours
           </h4>
           <h4
             className={`day-item ${index === 1 && "day-active"}`}

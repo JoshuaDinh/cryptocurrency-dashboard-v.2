@@ -2,13 +2,18 @@ import React from "react";
 import "./table.css";
 import { format, formatShortened } from "Utilities/Utilities";
 
-const Table = ({ coinList, setSelectedCoin }) => {
+const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
   function renderTable(coinList, setSelectedCoin) {
     return coinList.map((coin) => {
+      console.log(coin.name);
+
       return (
-        <tr key={coin.name} onClick={() => setSelectedCoin(coin.id)}>
-          <td>{coin.market_cap_rank}</td>
-          <td>{coin.name}</td>{" "}
+        <tr
+          className={selectedCoin === coin.id && "table-selected-row"}
+          key={coin.name}
+          onClick={() => setSelectedCoin(coin.id)}
+        >
+          <td>{coin.name}</td>
           <td className="table-column">
             <img className="table-coin-img" src={coin.image} alt="" />
           </td>
@@ -26,7 +31,6 @@ const Table = ({ coinList, setSelectedCoin }) => {
       <table className="table">
         <thead>
           <tr className="row">
-            <th>#</th>
             <th>Name</th>
             <th>Symbol</th>
             <th>Price</th>

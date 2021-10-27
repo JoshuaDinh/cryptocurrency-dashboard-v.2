@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./searchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchBar = ({ setSelectedCoin, selectedCoin }) => {
+const SearchBar = ({ setSelectedCoin }) => {
   const [input, setInput] = useState("");
 
   // Handle Inputs

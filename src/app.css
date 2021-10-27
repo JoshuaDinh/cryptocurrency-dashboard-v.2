@@ -6,17 +6,15 @@
 }
 
 :root {
-  --main-color: #16222a; /* fallback for old browsers */
-
   --main-bkg: -webkit-linear-gradient(
     to right,
-    #3a6073,
-    #16222a
+    rgb(58, 96, 115, 0.75),
+    rgb(22, 34, 420, 0.67)
   ); /* Chrome 10-25, Safari 5.1-6 */
   --main-bkg-browsers: linear-gradient(
     to right,
-    rgb(58, 96, 115),
-    rgb(22, 34, 42)
+    rgb(58, 96, 115, 0.5),
+    rgb(22, 34, 420, 0.67)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   --secondary-bkg: -webkit-linear-gradient(
@@ -42,4 +40,11 @@ a {
 
 .green {
   color: green;
+}
+
+.app {
+  display: flex;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: rgb(232, 232, 232);
 }

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 10vh;
+  min-height: 11vh;
 }
 
 .search-bar-form {
@@ -17,6 +17,8 @@
 .search-bar-input {
   width: 100%;
   border: none;
+  outline: none;
+  background: rgb(232, 232, 232);
 }
 
 .search-bar-icon {
@@ -27,11 +29,12 @@
 
 @media only screen and (max-width: 1350px) {
   .search-bar {
-    width: 100%;
+    padding: 0 2%;
     justify-content: center;
+    margin: 10px 0;
   }
   .search-bar-form {
-    width: 100%;
+    width: 35%;
     justify-content: center;
   }
 }

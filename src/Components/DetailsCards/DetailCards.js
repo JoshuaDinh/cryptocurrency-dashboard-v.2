@@ -1,6 +1,6 @@
 import React from "react";
 import "./detailCards.css";
-import { format, determineColor } from "../../Utilities/Utilities";
+import { format } from "../../Utilities/Utilities";
 
 const DetailCards = ({ coinList, selectedCoin }) => {
   function updateDetailCards() {
@@ -8,7 +8,6 @@ const DetailCards = ({ coinList, selectedCoin }) => {
       if (coin.id === selectedCoin) {
         const {
           market_cap,
-          total_volume,
           circulating_supply,
           max_supply,
           market_cap_change_percentage_24h,
@@ -22,20 +21,11 @@ const DetailCards = ({ coinList, selectedCoin }) => {
                 <span className="detail-cards-title">{format(market_cap)}</span>
               </p>
               <p>
-                24hr MC Change :
-                <span
-                  className={determineColor(market_cap_change_percentage_24h)}
-                >
-                  {format(market_cap_change_24h)}
-                </span>
+                24hr MC Change :<span>{format(market_cap_change_24h)}</span>
               </p>
               <p>
                 24hr MC Change % :
-                <span
-                  className={determineColor(market_cap_change_percentage_24h)}
-                >
-                  {market_cap_change_percentage_24h}
-                </span>
+                <span>{market_cap_change_percentage_24h}</span>
               </p>
             </div>
             <div className="detail-cards">

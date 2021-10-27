@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./app.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchCoins from "./Views/SearchCoins/SearchCoins";
-
-import AllAssets from "./Views/AllAssets/AllAssets";
+import SideNavigation from "Components/SideNavigation/SideNavigation";
 
 const App = () => {
   const [coinList, setCoinList] = useState([]);
@@ -25,14 +24,14 @@ const App = () => {
 
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <SearchCoins coinList={coinList} />
-        </Route>
-        <Route path="/AllAssets">
-          <AllAssets coinList={coinList} />
-        </Route>
-      </Switch>
+      <div className="app">
+        <SideNavigation />
+        <Switch>
+          <Route exact path="/">
+            <SearchCoins coinList={coinList} />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 };
