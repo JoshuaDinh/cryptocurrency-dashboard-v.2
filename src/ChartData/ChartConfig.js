@@ -21,8 +21,8 @@ export const LineChartOptions = {
 export const LineChartData = (canvas, index, chartData) => {
   const ctx = canvas.getContext("2d");
   let gradient = ctx.createLinearGradient(500, 0, 200, 0);
-  gradient.addColorStop(1, "rgb(58, 96, 115, 0.5)");
-  gradient.addColorStop(0, "rgb(22, 34, 420 ,0.57)");
+  gradient.addColorStop(1, "rgb(44, 62, 80)");
+  gradient.addColorStop(0, "rgb(189, 195, 199)");
 
   let label = [];
   for (let i = 0; i < chartData[index]?.prices.length; i++) {

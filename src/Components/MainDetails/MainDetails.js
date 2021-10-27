@@ -48,10 +48,12 @@ const DiscoverHeader = ({ coinList, selectedCoin }) => {
                 <h5>
                   All Time Low <span className="green">${format(atl)}</span>
                 </h5>
-                <span className="main-details-updated">
-                  Last Updated at :
-                  {moment(last_updated).format("MMMM Do YYYY, h:mm:ss a")}
-                </span>
+                <div className="main-details-updated">
+                  <span>Last Updated at :</span>
+                  <span>
+                    {moment(last_updated).format("MMMM Do YYYY, h:mm:ss a")}
+                  </span>
+                </div>
               </div>
             </div>
           </>

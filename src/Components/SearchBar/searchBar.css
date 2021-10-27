@@ -10,15 +10,17 @@
   align-items: center;
   border: 1px solid grey;
   width: 45%;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .search-bar-input {
   width: 100%;
   border: none;
   outline: none;
-  background: rgb(232, 232, 232);
+  background: whitesmoke;
 }
 
 .search-bar-icon {
