@@ -1,0 +1,20 @@
+.assets {
+  max-width: 95vw;
+  overflow-x: hidden;
+}
+
+.assets-content {
+  display: flex;
+  padding: 0 2%;
+}
+
+.assets-left-container {
+  min-width: 63%;
+}
+.assets-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3%;
+}

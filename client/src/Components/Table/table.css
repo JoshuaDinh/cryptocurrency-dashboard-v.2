@@ -1,0 +1,36 @@
+.table-container {
+  padding: 2%;
+}
+
+.table {
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+tr:hover {
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+th {
+  color: white;
+  padding: 5px;
+  background: var(--main-bkg);
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+  width: 10vw;
+}
+
+.table-coin-img {
+  height: 2em;
+}
+
+.table-selected-row {
+  border: 1px solid rgba(0, 82, 162, 0.75);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}

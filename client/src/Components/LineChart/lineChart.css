@@ -1,0 +1,66 @@
+.line-chart {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  padding: 15px;
+}
+
+.line-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.line-chart-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 4%;
+}
+
+.days-container {
+  display: flex;
+}
+
+.days-container-price {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.days-container-price > h1 {
+  background: var(--text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.days-container-price > h5 {
+  margin-left: 3%;
+  margin-bottom: 1%;
+}
+
+.day-item {
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 10px;
+  background: var(--secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.day-item:hover {
+  background: var(--text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.day-active {
+  background: var(--text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 1350px) {
+  .line-canvas-container {
+    width: 100%;
+  }
+}

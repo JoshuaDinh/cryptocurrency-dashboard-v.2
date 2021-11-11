@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --main-bkg: linear-gradient(
+    161deg,
+    rgba(0, 23, 45, 1) 10%,
+    rgba(0, 38, 77, 1) 36%,
+    rgba(2, 56, 110, 1) 72%,
+    rgba(0, 82, 162, 0.75) 100%
+  );
+
+  --text-clip: -webkit-linear-gradient(
+    rgba(0, 82, 162, 0.75),
+    rgba(0, 38, 77, 1)
+  );
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  --secondary-color: rgb(128, 128, 128);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.red {
+  color: rgb(220, 43, 43) !important;
+}
+
+.green {
+  color: rgb(13, 151, 87) !important;
+}
+
+.app {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  background: whitesmoke;
+}
+
+.frame {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: 1px solid lightgrey;
+}
