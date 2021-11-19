@@ -6,15 +6,14 @@ const Conversion = ({ coinList, selectedCoin }) => {
   const [amount, setAmount] = useState(null);
   const [symbol, setSymbol] = useState(null);
   const [price, setPrice] = useState(null);
-  const [usd, setUsd] = useState(0);
-  const [conversionCoin, setConversionCoin] = useState("bitcoin");
+  const [usd, setUsd] = useState(null);
 
+  console.log(selectedCoin);
   useEffect(() => {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
         setPrice(coin.current_price);
         setSymbol(coin.symbol);
-        setConversionCoin(coin.id);
       }
     }
   }, [selectedCoin]);
@@ -23,10 +22,9 @@ const Conversion = ({ coinList, selectedCoin }) => {
     setAmount(usd / price);
   }, [usd]);
 
-  function renderCoinConversion(e) {
-    console.log(coinList);
+  function renderCoinConversion() {
     for (let coin of coinList) {
-      if (conversionCoin === coin.id) {
+      if (selectedCoin === coin.id) {
         return (
           <>
             <h1>{coin.symbol.toUpperCase()}</h1>{" "}
@@ -38,28 +36,19 @@ const Conversion = ({ coinList, selectedCoin }) => {
               placeholder="Enter $ USD"
               value={usd}
             />
-            <span>{`If you pay $${usd} `}</span>
-            <span>{` you recieve ${amount} ${symbol?.toUpperCase()}`}</span>
+            {usd && (
+              <>
+                <span>{`If you pay $${usd} `}</span>
+                <span>{` you recieve ${amount} ${symbol?.toUpperCase()}`}</span>
+              </>
+            )}
           </>
         );
       }
     }
   }
 
-  return (
-    <div className="conversion frame">
-      <select className="conversion-select">
-        {coinList.map((coin) => {
-          return (
-            <option onChange={() => setConversionCoin(coin.id)}>
-              {coin.id}
-            </option>
-          );
-        })}
-      </select>
-      {renderCoinConversion()}
-    </div>
-  );
+  return <div className="conversion frame">{renderCoinConversion()}</div>;
 };
 
 export default Conversion;

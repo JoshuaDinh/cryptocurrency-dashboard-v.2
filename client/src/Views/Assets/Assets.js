@@ -11,7 +11,6 @@ import Conversion from "Components/Conversion/Conversion";
 
 const Assets = ({ coinList }) => {
   const [selectedCoin, setSelectedCoin] = useState("bitcoin");
-  console.log(selectedCoin);
 
   return (
     <div className="assets">
@@ -32,7 +31,7 @@ const Assets = ({ coinList }) => {
           <Conversion selectedCoin={selectedCoin} coinList={coinList} />
         </div>
       </div>
-      <div className="table-container">
+      <div className="assets-table-container">
         <Table setSelectedCoin={setSelectedCoin} coinList={coinList} />
       </div>
     </div>

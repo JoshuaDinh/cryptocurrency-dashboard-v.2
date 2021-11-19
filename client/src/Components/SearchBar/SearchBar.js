@@ -41,6 +41,14 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
           return <option value={coin.id}>{coin.symbol?.toUpperCase()}</option>;
         })}
       </select>
+      <div className="search-bar-auth-container">
+        <a
+          className="search-bar-auth-button"
+          href="http://localhost:8080/api/oAuth/redirect"
+        >
+          <h4>Connect with Coinbase?</h4>
+        </a>
+      </div>
     </div>
   );
 };

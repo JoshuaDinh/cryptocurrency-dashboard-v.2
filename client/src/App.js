@@ -8,7 +8,6 @@ import Assets from "./Views/Assets/Assets";
 
 const App = () => {
   const [coinList, setCoinList] = useState([]);
-  const [code, setCode] = useState("");
 
   // useEffect(() => {
   //   setCode(window.location.search.slice(6));
@@ -33,7 +32,7 @@ const App = () => {
       }
       fetchData();
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   }, []);
 

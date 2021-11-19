@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   width: 51%;
-  padding: 7px;
+  height: 5vh;
 }
 
 .search-bar-input {
@@ -28,13 +28,30 @@
 
 .search-bar-selector {
   width: 5%;
-  min-height: 5.83vh;
+  height: 5vh;
   margin-left: 5px;
   background: whitesmoke;
   border: none;
   outline: none;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.search-bar-auth-container {
+  flex: 2;
+  margin-right: 3%;
+}
+.search-bar-auth-button {
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+  min-width: 7rem;
+  cursor: pointer;
+  background: var(--main-bkg);
+  height: 5vh;
+  color: white;
+  letter-spacing: 1.25px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 @media only screen and (max-width: 1350px) {
