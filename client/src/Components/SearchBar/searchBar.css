@@ -38,13 +38,16 @@
 }
 
 .search-bar-auth-container {
+  display: flex;
+  justify-content: flex-end;
   flex: 2;
   margin-right: 3%;
 }
-.search-bar-auth-button {
+.search-bar-link {
+  display: flex;
+  align-items: center;
   padding: 10px;
   border-radius: 5px;
-  float: right;
   min-width: 7rem;
   cursor: pointer;
   background: var(--main-bkg);

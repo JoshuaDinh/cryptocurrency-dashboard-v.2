@@ -43,7 +43,7 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
       </select>
       <div className="search-bar-auth-container">
         <a
-          className="search-bar-auth-button"
+          className="search-bar-link"
           href="http://localhost:8080/api/oAuth/redirect"
         >
           <h4>Connect with Coinbase?</h4>
