@@ -29,16 +29,16 @@ const Assets = () => {
     }
   }, []);
 
-  function filterData() {
+  const filterData = () => {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
         return setSelectedData(coin);
       }
     }
-  }
+  };
 
   useEffect(() => {
-    return filterData();
+    filterData();
   }, [selectedCoin]);
 
   return (
@@ -53,10 +53,11 @@ const Assets = () => {
         <div className="assets-left-container">
           <SelectedCoinName selectedCoin={selectedCoin} data={selectedData} />
           <LineChart selectedCoin={selectedCoin} coinList={coinList} />
-          <MarketStats selectedCoin={selectedCoin} coinList={coinList} />
+          <MarketStats data={selectedData} filterData={filterData} />
         </div>
         <div className="assets-right-container">
-          <DetailCards selectedCoin={selectedCoin} coinList={coinList} />
+          <DetailCards data={selectedData} />
+          {/* <DetailCards selectedCoin={selectedCoin} coinList={coinList} /> */}
           <Conversion selectedCoin={selectedCoin} coinList={coinList} />
         </div>
       </div>

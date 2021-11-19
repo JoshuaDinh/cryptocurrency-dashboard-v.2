@@ -5,6 +5,7 @@ import { format, formatShortened } from "Utilities/Utilities";
 const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
   function renderTable(coinList, setSelectedCoin) {
     return coinList.map((coin) => {
+      // Function scrolls to top of page when item is clicked alllowing users to see the data on the new selected coin
       function selectAndScroll() {
         setSelectedCoin(coin.id);
         window.scrollTo(0, 0);
@@ -29,8 +30,8 @@ const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
   }
 
   return (
-    <div className="table-container ">
-      <table className="table frame">
+    <table className="table-container">
+      <thead className="table">
         <tr className="row">
           <th>Name</th>
           <th>Symbol</th>
@@ -39,11 +40,11 @@ const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
           <th>Volume</th>
           <th>Market-Cap</th>
         </tr>
-        <tbody className="table-body">
-          {renderTable(coinList, setSelectedCoin)}
-        </tbody>
-      </table>
-    </div>
+      </thead>
+      <tbody className="table-body">
+        {renderTable(coinList, setSelectedCoin)}
+      </tbody>
+    </table>
   );
 };
 

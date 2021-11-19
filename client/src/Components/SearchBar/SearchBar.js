@@ -38,7 +38,11 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
         value={selectedCoin}
       >
         {coinList.map((coin) => {
-          return <option value={coin.id}>{coin.symbol?.toUpperCase()}</option>;
+          return (
+            <option key={coin.id} value={coin.id}>
+              {coin.symbol?.toUpperCase()}
+            </option>
+          );
         })}
       </select>
       <div className="search-bar-auth-container">

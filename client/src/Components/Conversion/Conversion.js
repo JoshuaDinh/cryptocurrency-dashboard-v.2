@@ -5,7 +5,7 @@ import "./conversion.css";
 const Conversion = ({ coinList, selectedCoin }) => {
   const [amount, setAmount] = useState(null);
   const [price, setPrice] = useState(null);
-  const [usd, setUsd] = useState(null);
+  const [usd, setUsd] = useState("");
 
   useEffect(() => {
     setAmount(usd / price);
