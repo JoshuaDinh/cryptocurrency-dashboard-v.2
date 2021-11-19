@@ -9,8 +9,37 @@ import SearchBar from "Components/SearchBar/SearchBar";
 import SelectedCoinName from "Components/SelectedCoinName/SelectedCoinName";
 import Conversion from "Components/Conversion/Conversion";
 
-const Assets = ({ coinList }) => {
+const Assets = () => {
   const [selectedCoin, setSelectedCoin] = useState("bitcoin");
+  const [selectedData, setSelectedData] = useState({});
+  const [coinList, setCoinList] = useState([]);
+
+  useEffect(() => {
+    try {
+      async function fetchData() {
+        const response = await fetch(
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C1d%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y"
+        );
+        const data = await response.json();
+        setCoinList(data);
+      }
+      fetchData();
+    } catch (err) {
+      alert(err);
+    }
+  }, []);
+
+  function filterData() {
+    for (let coin of coinList) {
+      if (coin.id === selectedCoin) {
+        return setSelectedData(coin);
+      }
+    }
+  }
+
+  useEffect(() => {
+    return filterData();
+  }, [selectedCoin]);
 
   return (
     <div className="assets">
@@ -22,7 +51,7 @@ const Assets = ({ coinList }) => {
       />
       <div className="assets-content">
         <div className="assets-left-container">
-          <SelectedCoinName selectedCoin={selectedCoin} coinList={coinList} />
+          <SelectedCoinName selectedCoin={selectedCoin} data={selectedData} />
           <LineChart selectedCoin={selectedCoin} coinList={coinList} />
           <MarketStats selectedCoin={selectedCoin} coinList={coinList} />
         </div>
