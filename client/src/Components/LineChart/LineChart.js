@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./lineChart.css";
+import axios from "axios";
 import { Line } from "react-chartjs-2";
 import { LineChartOptions, LineChartData } from "../../ChartData/ChartConfig";
 import { format, determineColor } from "../../Utilities/Utilities";
@@ -25,35 +26,27 @@ const LineChart = ({ selectedCoin, coinList }) => {
   const [index, setIndex] = useState(3);
   const [chartData, setChartData] = useState([]);
 
-  const fetchLineData = [
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1day&interval=hourly`
-    ),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=7day&interval=daily`
-    ),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=14&interval=daily`
-    ),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=30&interval=daily`
-    ),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1hr&interval=minute`
-    ),
-  ];
-
   useEffect(() => {
     try {
       async function fetchData() {
-        const [oneD, oneW, twoW, oneM, oneH] = await Promise.all(fetchLineData);
-        const res = await Promise.all([
-          oneD.json(),
-          oneW.json(),
-          twoW.json(),
-          oneM.json(),
-          oneH.json(),
-        ]);
+        const oneD = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1day&interval=hourly`
+        );
+        const oneW = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=7day&interval=daily`
+        );
+        const twoW = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=14&interval=daily`
+        );
+        const oneM = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=30&interval=daily`
+        );
+        const oneH = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1hr&interval=minute`
+        );
+
+        const res = [oneD.data, oneW.data, twoW.data, oneM.data, oneH.data];
+
         setChartData(res);
       }
       if (selectedCoin) {
@@ -63,6 +56,7 @@ const LineChart = ({ selectedCoin, coinList }) => {
       console.log(err);
     }
   }, [selectedCoin]);
+  console.log(chartData);
 
   return (
     <>

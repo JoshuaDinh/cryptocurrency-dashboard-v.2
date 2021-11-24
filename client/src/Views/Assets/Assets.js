@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./assets.css";
+import axios from "axios";
 import Slide from "Components/Slide/Slide";
 import LineChart from "Components/LineChart/LineChart";
 import MarketStats from "Components/MarketStats/MarketStats";
@@ -17,11 +18,10 @@ const Assets = () => {
   useEffect(() => {
     try {
       async function fetchData() {
-        const response = await fetch(
+        const response = await axios.get(
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C1d%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y"
         );
-        const data = await response.json();
-        setCoinList(data);
+        setCoinList(response.data);
         setSelectedCoin("bitcoin");
       }
       fetchData();
