@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-
-const axios = require("axios");
+const Axios = require("axios");
 
 // User clicks link to connect with Coinbase - link is sent to backend endpoint and redirected with proper values
 router.get("/redirect", (req, res) => {
@@ -15,38 +14,36 @@ router.get("/redirect", (req, res) => {
   }
 });
 
+// Coinbase redirects user to this endpoint with code params
 // Once user is redirected back from Coinbase we retrieve the code and redirect again back to Coinbase to retrieve token
-function getToken(axios, code) {
-  const values = {
+
+router.get("/verify", async (req, res) => {
+  const code = req.query.code;
+  const data = {
     grant_type: "authorization_code",
     code: code,
     client_id: process.env.OAUTH_CLIENT_ID,
     client_secret: process.env.OAUTH_SECRET,
-    redirect_uri: "http:8080/OAuth/User-Verified",
+    redirect_uri: "http://localhost:3000/User-Verified",
   };
-  const url = "https://api.coinbase.com/oauth/token";
 
-  return async function Post() {
-    try {
-      const token = await axios.post(url, values, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const response = await token;
-
-      jwt.sign({});
-    } catch (err) {
-      console.log(err);
-    }
+  const config = {
+    method: "post",
+    url: "https://api.coinbase.com/oauth/token",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    data,
   };
-}
-
-// Coinbase redirects user to this endpoint with code params
-router.get("/verify", (req, res) => {
-  const code = req.query.code;
-  getToken(code);
-  res.redirect("http://localhost:3000/User-Verified");
+  try {
+    const response = await Axios(config);
+    accessToken = response.data.access_token;
+    refreshToken = response.data.refresh_token;
+    console.log(response.data);
+    res.send({ response: response?.data });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;
