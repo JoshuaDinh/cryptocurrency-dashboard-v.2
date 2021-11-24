@@ -1,10 +1,10 @@
 .table-container {
-  max-height: 500px;
-  overflow: scroll;
-}
-.table {
   font-size: 0.8rem;
-  width: 100%;
+  overflow: scroll;
+  height: 100%;
+  margin-top: 10px;
+}
+table {
   overflow: scroll;
 }
 
@@ -17,7 +17,7 @@ tr:hover {
 th {
   color: white;
   padding: 5px;
-  background: var(--main-bkg);
+  white-space: nowrap;
 }
 
 td {
@@ -27,11 +27,15 @@ td {
 }
 
 .table-coin-img {
-  height: 2em;
+  max-height: 2rem;
 }
 
 .table-selected-row {
   border: 1px solid rgba(0, 82, 162, 0.75);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.row {
+  background: var(--main-bkg);
 }

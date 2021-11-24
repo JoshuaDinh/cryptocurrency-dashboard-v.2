@@ -31,7 +31,7 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
           placeholder="Search for a Coin.."
           value={input}
         />
-      </form>
+      </form>{" "}
       <select
         className="search-bar-selector frame"
         onChange={(e) => setSelectedCoin(e.target.value)}
@@ -45,13 +45,15 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
           );
         })}
       </select>
-      <div className="search-bar-auth-container">
-        <a
-          className="search-bar-link"
-          href="http://localhost:8080/api/oAuth/redirect"
-        >
-          <h4>Connect with Coinbase?</h4>
-        </a>
+      <div className="search-bar-auth-container ">
+        <div className="search-bar-auth-link-container ">
+          <a
+            className="search-bar-link frame"
+            href="http://localhost:8080/api/oAuth/redirect"
+          >
+            <h4>Sign In</h4>
+          </a>
+        </div>
       </div>
     </div>
   );

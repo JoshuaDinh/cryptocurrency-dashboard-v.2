@@ -2,7 +2,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 5vw;
+  width: 7vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,6 @@
   align-items: center;
   justify-content: center;
   min-height: 5vh;
-  width: 5vw;
   width: 100%;
   margin: 12px 0;
   font-size: 0.9rem;
@@ -32,8 +31,8 @@
 .side-nav-active,
 .side-nav-link:hover {
   color: whitesmoke;
-  border-top: 1px solid whitesmoke;
-  border-bottom: 1px solid whitesmoke;
+  border-top: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }

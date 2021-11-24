@@ -8,9 +8,12 @@ import "./marketStats.css";
 
 const MarketStats = ({ data }) => {
   return (
-    <div className="market-stats frame">
-      <h3>Market Stats</h3>
-      <div className="market-stats-container ">
+    <div className="market-stats">
+      <div className="market-stats-header">
+        <h3>Market Stats</h3>
+        <img src={data.image} alt="" className="market-stats-coin-image" />
+      </div>
+      <div className="market-stats-container">
         <div className="market-stats-item">
           <h4>Market Cap Rank</h4>
           <p>#{data.market_cap_rank}</p>

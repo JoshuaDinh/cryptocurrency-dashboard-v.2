@@ -30,21 +30,23 @@ const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
   }
 
   return (
-    <table className="table-container">
-      <thead className="table">
-        <tr className="row">
-          <th>Name</th>
-          <th>Symbol</th>
-          <th>Price</th>
-          <th>Supply</th>
-          <th>Volume</th>
-          <th>Market-Cap</th>
-        </tr>
-      </thead>
-      <tbody className="table-body">
-        {renderTable(coinList, setSelectedCoin)}
-      </tbody>
-    </table>
+    <div className="table-container">
+      <table>
+        <thead className="table">
+          <tr className="row">
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Supply</th>
+            <th>Volume</th>
+            <th>Market-Cap</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {renderTable(coinList, setSelectedCoin)}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

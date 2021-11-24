@@ -1,6 +1,7 @@
 const express = require("express");
-
 const path = require("path");
+const Oauth = require("./Routes/api/OAuth");
+require("dotenv").config();
 
 // initialize app config
 const app = express();
@@ -9,7 +10,7 @@ const port = process.env.PORT || 8080;
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.use("/api/user", userRoute);
+app.use("/api/OAuth", Oauth);
 
 // Static assets - production
 if (process.env.NODE_ENV === "production") {

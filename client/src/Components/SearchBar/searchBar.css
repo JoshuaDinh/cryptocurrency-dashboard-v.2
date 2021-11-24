@@ -1,15 +1,14 @@
 .search-bar {
   display: flex;
   align-items: center;
-  width: 100%;
-  padding: 0 2%;
-  margin: 3% 0 15px 0;
+  justify-content: space-between;
+  margin: 15px 2%;
 }
 
 .search-bar-form {
   display: flex;
   align-items: center;
-  width: 51%;
+  width: 62%;
   height: 5vh;
 }
 
@@ -22,14 +21,12 @@
 
 .search-bar-icon {
   font-size: 2rem !important;
-  margin-left: 5px;
+  margin-left: 10px;
   color: var(--secondary-color);
 }
 
 .search-bar-selector {
-  width: 5%;
   height: 5vh;
-  margin-left: 5px;
   background: whitesmoke;
   border: none;
   outline: none;
@@ -40,21 +37,27 @@
 .search-bar-auth-container {
   display: flex;
   justify-content: flex-end;
-  flex: 2;
-  margin-right: 3%;
+}
+
+.search-bar-link-container {
+  background: red;
 }
 .search-bar-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
   border-radius: 5px;
-  min-width: 7rem;
   cursor: pointer;
   background: var(--main-bkg);
-  height: 5vh;
-  color: white;
-  letter-spacing: 1.25px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --text-clip: -webkit-linear-gradient(
+    rgba(0, 82, 162, 0.75),
+    rgba(0, 38, 77, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 @media only screen and (max-width: 1350px) {

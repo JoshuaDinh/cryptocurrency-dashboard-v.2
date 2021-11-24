@@ -6,19 +6,21 @@
 .assets-content {
   display: flex;
   padding: 0 2%;
+  max-height: 85vh;
+  min-height: 85vh;
 }
 
 .assets-left-container {
   min-width: 63%;
+  height: 100%;
+  min-height: 85vh;
+  max-height: 85vh;
 }
 .assets-right-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  max-height: 85vh;
   padding: 0 3%;
-}
-.assets-table-container {
-  padding: 2%;
-  width: 64.5%;
 }

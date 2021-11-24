@@ -1,9 +1,28 @@
 .market-stats {
   display: flex;
   flex-direction: column;
-  padding: 3%;
+  padding: 2%;
   margin-top: 15px;
-  color: var(--secondary-color);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.market-stats-header {
+  display: flex;
+  align-items: center;
+  background: var(--text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.market-stats-header > h3 {
+  margin: 0px 10px 0px 0px;
+}
+.market-stats-coin-image {
+  min-width: 1.5em;
+  max-height: 1.5em;
+  min-height: 1.5em;
 }
 
 .market-stats-container {
@@ -12,14 +31,9 @@
   justify-content: space-between;
 }
 
-.market-stats > h3,
-.market-stats-item > h4 {
-  margin-bottom: 10px;
-  background: var(--text-clip);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.market-stats-item {
+  color: rgb(128, 128, 128);
 }
-
 .market-stats-item > p {
   text-align: center;
   margin-top: 10px;

@@ -10,7 +10,7 @@ import SelectedCoinName from "Components/SelectedCoinName/SelectedCoinName";
 import Conversion from "Components/Conversion/Conversion";
 
 const Assets = () => {
-  const [selectedCoin, setSelectedCoin] = useState("bitcoin");
+  const [selectedCoin, setSelectedCoin] = useState("");
   const [selectedData, setSelectedData] = useState({});
   const [coinList, setCoinList] = useState([]);
 
@@ -22,6 +22,7 @@ const Assets = () => {
         );
         const data = await response.json();
         setCoinList(data);
+        setSelectedCoin("bitcoin");
       }
       fetchData();
     } catch (err) {
@@ -32,7 +33,7 @@ const Assets = () => {
   const filterData = () => {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
-        return setSelectedData(coin);
+        setSelectedData(coin);
       }
     }
   };
@@ -51,18 +52,18 @@ const Assets = () => {
       />
       <div className="assets-content">
         <div className="assets-left-container">
-          <SelectedCoinName selectedCoin={selectedCoin} data={selectedData} />
+          <SelectedCoinName
+            selectedCoin={selectedCoin}
+            data={selectedData}
+            filterData={filterData}
+          />
           <LineChart selectedCoin={selectedCoin} coinList={coinList} />
-          <MarketStats data={selectedData} filterData={filterData} />
+          <MarketStats data={selectedData} />
         </div>
         <div className="assets-right-container">
-          <DetailCards data={selectedData} />
-          {/* <DetailCards selectedCoin={selectedCoin} coinList={coinList} /> */}
-          <Conversion selectedCoin={selectedCoin} coinList={coinList} />
+          <DetailCards data={selectedData} />{" "}
+          <Table setSelectedCoin={setSelectedCoin} coinList={coinList} />
         </div>
-      </div>
-      <div className="assets-table-container">
-        <Table setSelectedCoin={setSelectedCoin} coinList={coinList} />
       </div>
     </div>
   );
