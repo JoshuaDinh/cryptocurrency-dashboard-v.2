@@ -26,12 +26,10 @@
 }
 
 .search-bar-selector {
-  height: 5vh;
+  height: 100%;
   background: whitesmoke;
   border: none;
   outline: none;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .search-bar-auth-container {
@@ -62,12 +60,24 @@
 
 @media only screen and (max-width: 1350px) {
   .search-bar {
-    padding: 0 2%;
     justify-content: center;
     margin: 10px 0;
   }
   .search-bar-form {
     width: 35%;
-    justify-content: center;
+    justify-content: space-between;
+  }
+  .search-bar-link {
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .search-bar-form {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .search-bar-form {
+    width: 96%;
   }
 }

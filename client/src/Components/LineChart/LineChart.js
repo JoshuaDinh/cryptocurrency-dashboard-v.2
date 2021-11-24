@@ -56,7 +56,6 @@ const LineChart = ({ selectedCoin, coinList }) => {
       console.log(err);
     }
   }, [selectedCoin]);
-  console.log(chartData);
 
   return (
     <>

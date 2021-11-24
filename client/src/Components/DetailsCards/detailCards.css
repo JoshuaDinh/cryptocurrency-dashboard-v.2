@@ -27,9 +27,6 @@
 
 @media only screen and (max-width: 1350px) {
   .detail-cards-container {
-    align-items: center;
-  }
-  .detail-cards:first-child {
-    margin: 10px 0px;
+    margin-top: 3vh;
   }
 }

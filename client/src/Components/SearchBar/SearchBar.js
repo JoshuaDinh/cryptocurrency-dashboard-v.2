@@ -30,21 +30,22 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
           type="text"
           placeholder="Search for a Coin.."
           value={input}
-        />
-      </form>{" "}
-      <select
-        className="search-bar-selector frame"
-        onChange={(e) => setSelectedCoin(e.target.value)}
-        value={selectedCoin}
-      >
-        {coinList.map((coin) => {
-          return (
-            <option key={coin.id} value={coin.id}>
-              {coin.symbol?.toUpperCase()}
-            </option>
-          );
-        })}
-      </select>
+        />{" "}
+        <select
+          className="search-bar-selector frame"
+          onChange={(e) => setSelectedCoin(e.target.value)}
+          value={selectedCoin}
+        >
+          {coinList.map((coin) => {
+            return (
+              <option key={coin.id} value={coin.id}>
+                {coin.symbol?.toUpperCase()}
+              </option>
+            );
+          })}
+        </select>
+      </form>
+
       <div className="search-bar-auth-container ">
         <div className="search-bar-auth-link-container ">
           <a

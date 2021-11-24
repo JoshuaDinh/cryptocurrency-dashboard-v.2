@@ -39,3 +39,9 @@ td {
 .row {
   background: var(--main-bkg);
 }
+
+@media only screen and (max-width: 1350px) {
+  table {
+    width: 100%;
+  }
+}
