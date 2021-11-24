@@ -10,8 +10,7 @@ import SearchBar from "Components/SearchBar/SearchBar";
 import SelectedCoinName from "Components/SelectedCoinName/SelectedCoinName";
 import Conversion from "Components/Conversion/Conversion";
 
-const Assets = () => {
-  const [selectedCoin, setSelectedCoin] = useState("");
+const Assets = ({ selectedCoin, setSelectedCoin }) => {
   const [selectedData, setSelectedData] = useState({});
   const [coinList, setCoinList] = useState([]);
 

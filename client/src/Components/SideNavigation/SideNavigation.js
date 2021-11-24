@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LoginIcon from "@mui/icons-material/Login";
-
+import WaterfallChartOutlinedIcon from "@mui/icons-material/WaterfallChartOutlined";
 const SideNavigation = () => {
   return (
     <nav className="side-nav">
@@ -23,6 +23,20 @@ const SideNavigation = () => {
           className="side-nav-link"
         >
           <AccountBalanceIcon />
+        </NavLink>
+        <NavLink
+          activeClassName="side-nav-active"
+          to="/nft"
+          className="side-nav-link"
+        >
+          <span>-NFT-</span>
+        </NavLink>
+        <NavLink
+          activeClassName="side-nav-active"
+          to="/candle-stick"
+          className="side-nav-link"
+        >
+          <WaterfallChartOutlinedIcon />
         </NavLink>
       </div>
       <a

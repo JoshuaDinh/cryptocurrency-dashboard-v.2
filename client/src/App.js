@@ -4,9 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Account from "./Views/Account/Account";
 import SideNavigation from "Components/SideNavigation/SideNavigation";
 import Assets from "./Views/Assets/Assets";
+import CandleStick from "./Views/CandleStick/CandleStick";
 // import axios from "axios";
 
 const App = () => {
+  const [selectedCoin, setSelectedCoin] = useState("");
+
   // useEffect(() => {
   //   setCode(window.location.search.slice(6));
   //   const redirect = async () => {
@@ -27,8 +30,17 @@ const App = () => {
           <Route exact path="/User-Verified">
             <Account />
           </Route>
+          <Route exact path="/candle-stick">
+            <CandleStick
+              selectedCoin={selectedCoin}
+              setSelectedCoin={setSelectedCoin}
+            />
+          </Route>
           <Route exact path="/">
-            <Assets />
+            <Assets
+              selectedCoin={selectedCoin}
+              setSelectedCoin={setSelectedCoin}
+            />
           </Route>
         </Switch>
       </div>

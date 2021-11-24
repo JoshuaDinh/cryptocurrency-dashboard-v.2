@@ -8,11 +8,14 @@ const Account = () => {
   // const [user, setUser] = useState([]);
   // useEffect(() => {
   //   const fetchData = async () => {
-  //     const response = await axios.get("https://api.coinbase.com/v2/user");
+  //     const response = await axios.get(
+  //       "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20"
+  //     );
   //     setUser(response.data);
   //   };
   //   fetchData();
   // }, []);
+
   return (
     <div className="account">
       <Transactions />

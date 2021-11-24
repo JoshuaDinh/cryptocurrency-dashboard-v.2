@@ -30,7 +30,7 @@ const Table = ({ coinList, setSelectedCoin, selectedCoin }) => {
   }
 
   return (
-    <div className="table-container">
+    <div className="table-container frame">
       <table>
         <thead className="table">
           <tr className="row">
