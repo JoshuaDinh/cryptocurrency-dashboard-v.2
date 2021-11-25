@@ -1,4 +1,4 @@
-.selected-coin-name {
+.selected-coin-header {
   display: flex;
   align-items: center;
   padding: 2%;
@@ -13,16 +13,17 @@
   margin-right: 4%;
 }
 
-.selected-coin-name > h1 {
+.selected-coin-header > h1 {
   margin-right: 13px;
   background: var(--text-clip);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.selected-coin-name > h2 {
+.selected-coin-header > h4 {
   color: var(--secondary-color);
+  letter-spacing: 1px;
 }
-.selected-coin-name > p {
+.selected-coin-header > p {
   flex: 1;
   text-align: right;
   font-size: 0.8rem;
@@ -30,12 +31,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .selected-coin-name > h2 {
+  .selected-coin-header > h2 {
     font-size: 1rem;
   }
 }
 @media only screen and (max-width: 500px) {
-  .selected-coin-name > h1 {
+  .selected-coin-header > h1 {
     font-size: 1.5rem;
   }
 }

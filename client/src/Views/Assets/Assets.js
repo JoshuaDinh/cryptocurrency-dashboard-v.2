@@ -7,29 +7,14 @@ import MarketStats from "Components/MarketStats/MarketStats";
 import Table from "Components/Table/Table";
 import DetailCards from "Components/DetailsCards/DetailCards";
 import SearchBar from "Components/SearchBar/SearchBar";
-import SelectedCoinName from "Components/SelectedCoinName/SelectedCoinName";
+import SelectedCoinHeader from "Components/SelectedCoinHeader/SelectedCoinHeader";
 import Conversion from "Components/Conversion/Conversion";
+import CandleStickChart from "Components/CandleStickChart/CandleStickChart";
 
-const Assets = ({ selectedCoin, setSelectedCoin }) => {
+const Assets = ({ selectedCoin, setSelectedCoin, coinList }) => {
   const [selectedData, setSelectedData] = useState({});
-  const [coinList, setCoinList] = useState([]);
 
-  useEffect(() => {
-    try {
-      async function fetchData() {
-        const response = await axios.get(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C1d%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y"
-        );
-        setCoinList(response.data);
-        setSelectedCoin("bitcoin");
-      }
-      fetchData();
-    } catch (err) {
-      alert(err);
-    }
-  }, []);
-
-  const filterData = () => {
+  const filterData = (coinList) => {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
         setSelectedData(coin);
@@ -38,7 +23,7 @@ const Assets = ({ selectedCoin, setSelectedCoin }) => {
   };
 
   useEffect(() => {
-    filterData();
+    filterData(coinList);
   }, [selectedCoin]);
 
   return (
@@ -51,17 +36,16 @@ const Assets = ({ selectedCoin, setSelectedCoin }) => {
       />
       <div className="assets-content">
         <div className="assets-left-container">
-          <SelectedCoinName
-            selectedCoin={selectedCoin}
-            data={selectedData}
-            filterData={filterData}
-          />
+          <SelectedCoinHeader selectedCoin={selectedCoin} data={selectedData} />
           <LineChart selectedCoin={selectedCoin} coinList={coinList} />
           <MarketStats data={selectedData} />
         </div>
         <div className="assets-right-container">
-          <DetailCards data={selectedData} />{" "}
-          <Table setSelectedCoin={setSelectedCoin} coinList={coinList} />
+          {/* <DetailCards data={selectedData} /> */}
+          {/* <Table setSelectedCoin={setSelectedCoin} coinList={coinList} /> */}
+          {/* <Conversion coinList={coinList} selectedCoin={selectedCoin} /> */}
+          <CandleStickChart selectedCoin={selectedCoin} />
+          <DetailCards data={selectedData} />
         </div>
       </div>
     </div>

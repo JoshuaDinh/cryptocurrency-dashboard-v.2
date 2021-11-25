@@ -11,18 +11,13 @@ const Conversion = ({ coinList, selectedCoin }) => {
     setAmount(usd / price);
   }, [usd]);
 
-  // useEffect(() => {
-  //   for (let coin of coinList) {
-  //     if (coin.id === selectedCoin) {
-  //       setPrice(coin.current_price);
-  //     }
-  //   }
-  // }, [selectedCoin]);
-
-  // function convertCoinToUSD()
-  // {
-  //   ()
-  // }
+  useEffect(() => {
+    for (let coin of coinList) {
+      if (coin.id === selectedCoin) {
+        setPrice(coin.current_price);
+      }
+    }
+  }, [selectedCoin]);
 
   function renderCoinConversion() {
     for (let coin of coinList) {

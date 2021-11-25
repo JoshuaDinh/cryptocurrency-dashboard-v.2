@@ -21,9 +21,10 @@ export const LineChartOptions = {
 
 export const LineChartData = (canvas, index, chartData) => {
   const ctx = canvas.getContext("2d");
-  let gradient = ctx.createLinearGradient(500, 0, 200, 0);
-  gradient.addColorStop(1, "  rgba(0, 38, 77, 1)  ");
-  gradient.addColorStop(0, " rgba(0, 82, 162, 1)  ");
+  let borderGradient = ctx.createLinearGradient(500, 0, 200, 0);
+  borderGradient.addColorStop(1, "  rgba(0, 38, 77, 1)  ");
+  borderGradient.addColorStop(0, " rgba(0, 82, 162, 1)  ");
+
   let priceLabel = [];
   for (let i = 0; i < chartData[index]?.prices?.length; i++) {
     priceLabel.push(i);
@@ -34,7 +35,8 @@ export const LineChartData = (canvas, index, chartData) => {
       {
         label: "Price(USD)",
         data: chartData[index]?.prices,
-        borderColor: gradient,
+        borderColor: borderGradient,
+        fill: false,
       },
     ],
   };

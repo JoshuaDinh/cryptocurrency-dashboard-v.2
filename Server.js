@@ -9,6 +9,7 @@ const port = process.env.PORT || 8080;
 
 // Init Middleware
 app.use(express.json({ extended: false }));
+app.use(cookieParser());
 
 app.use("/api/OAuth", Oauth);
 

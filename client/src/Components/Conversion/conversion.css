@@ -9,15 +9,29 @@
 }
 
 .conversion-image {
-  width: 6em;
-  margin: 25px 0;
+  width: 4em;
+  /* margin: 25px 0; */
 }
 
-.conversion > input {
-  width: 80%;
-  min-height: 10%;
+.conversion-input {
   font-size: 1.5rem;
-  margin-bottom: 25px;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
 }
 
 .conversion > h1 {

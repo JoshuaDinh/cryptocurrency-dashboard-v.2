@@ -2,7 +2,7 @@
   font-size: 0.8rem;
   overflow-y: scroll;
   height: 100%;
-  margin-top: 10px;
+  width: 100%;
 }
 table {
   overflow: scroll;

@@ -15,14 +15,21 @@ const CandleStickChart = ({ selectedCoin }) => {
     };
     fetchData();
   }, [selectedCoin]);
-  console.log(data);
+
   const options = {
+      plotOptions: {
+        candlestick: {
+          colors: {
+            upward: "rgba(0, 82, 162)",
+            downward: " rgba(0, 38, 77, 1) ",
+          },
+        },
+      },
       chart: {
         type: "candlestick",
-        height: 350,
       },
       title: {
-        text: "CandleStick Chart",
+        text: "24hr " + selectedCoin.toUpperCase(),
         align: "left",
       },
       xaxis: {
@@ -40,12 +47,13 @@ const CandleStickChart = ({ selectedCoin }) => {
       },
     ];
   return (
-    <div className="candle-stick-chart">
+    <div className="candle-stick-chart frame">
       <Chart
         options={options}
         series={series}
         type="candlestick"
         width="100%"
+        height="100%"
       />
     </div>
   );
