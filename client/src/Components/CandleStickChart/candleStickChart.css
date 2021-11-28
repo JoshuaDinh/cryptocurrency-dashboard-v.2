@@ -1,6 +1,14 @@
 .candle-stick-chart {
+  position: relative;
   width: 100%;
   height: 40%;
-  padding: 0;
-  margin: 0;
+  padding: 2%;
+}
+.candle-stick-chart > h4 {
+  position: absolute;
+  top: 3.5%;
+  left: 57%;
+  background: var(--text-clip);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

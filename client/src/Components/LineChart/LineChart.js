@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./lineChart.css";
 import axios from "axios";
+import Loader from "Components/Loader/Loader";
 import { Line } from "react-chartjs-2";
 import { LineChartOptions, LineChartData } from "../../ChartData/ChartConfig";
 import { format, determineColor } from "../../Utilities/Utilities";
@@ -25,9 +26,11 @@ const LineChart = ({ selectedCoin, coinList }) => {
   // Index keeps track of the selected time period for they graph to display & styling for the selectors
   const [index, setIndex] = useState(3);
   const [chartData, setChartData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     try {
+      setLoading(true);
       async function fetchData() {
         const oneD = await axios.get(
           `https://api.coingecko.com/api/v3/coins/${selectedCoin}/market_chart?vs_currency=usd&days=1day&interval=hourly`
@@ -48,6 +51,7 @@ const LineChart = ({ selectedCoin, coinList }) => {
         const res = [oneD.data, oneW.data, twoW.data, oneM.data, oneH.data];
 
         setChartData(res);
+        setLoading(false);
       }
       if (selectedCoin) {
         fetchData();
@@ -95,12 +99,16 @@ const LineChart = ({ selectedCoin, coinList }) => {
             </h4>
           </div>
         </div>
-        <div className="line-canvas-container">
-          <Line
-            data={(canvas) => LineChartData(canvas, index, chartData)}
-            options={LineChartOptions}
-          />
-        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="line-canvas-container">
+            <Line
+              data={(canvas) => LineChartData(canvas, index, chartData)}
+              options={LineChartOptions}
+            />
+          </div>
+        )}
       </div>
     </>
   );

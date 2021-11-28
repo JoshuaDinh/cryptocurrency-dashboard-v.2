@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./selectedCoinHeader.css";
 import moment from "moment";
 
-const SelectedCoinHeader = ({ data }) => {
+const SelectedCoinHeader = ({ selectedData }) => {
   return (
     <div className="selected-coin-header">
-      <img src={data.image} alt="" className="selected-coin-image" />
-      <h1>{data.name}</h1>
-      <h4>({data.symbol.toUpperCase()})</h4>
-      <p>{moment(data.last_updated).format("LLLL")}</p>{" "}
+      <img src={selectedData.image} alt="" className="selected-coin-image" />
+      <h1>{selectedData.name}</h1>
+      <h4>({selectedData?.symbol?.toUpperCase()})</h4>
+      <p>{moment(selectedData.last_updated).format("LLLL")}</p>
     </div>
   );
 };

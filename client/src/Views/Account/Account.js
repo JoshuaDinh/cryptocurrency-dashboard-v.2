@@ -9,11 +9,19 @@ const Account = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("https://api.coinbase.com/v2/user/");
+      const response = await axios.get("/Api/OAuth/lol");
       setUser(response.data);
     };
     fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await axios.get("https://api.coinbase.com/v2/user/");
+  //     setUser(response.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   console.log(user);
   return (

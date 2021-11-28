@@ -13,6 +13,13 @@ router.get("/redirect", (req, res) => {
     console.log(err);
   }
 });
+router.get("/lol", (req, res) => {
+  try {
+    console.log(req.cookies);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 // Coinbase redirects user to this endpoint with code params
 // Once user is redirected back from Coinbase we retrieve the code and redirect again back to Coinbase to retrieve token
@@ -36,7 +43,7 @@ router.get("/verify", async (req, res) => {
 
   try {
     const response = await axios.post(
-      `https://api.coinbase.com/oauth/token?grant_type=authorization_code&code=${code}&client_id=3729a3751f4b64aff16029bf939e0657e49d2a935141586fe1429737c329d5a6&client_secret=40ce250e2f2f95cf0e3e93d5a2df38a377920cd2f90b8db353457756c8077bb8&redirect_uri=${process.env.OAUTH_REDIRECT}`
+      `https://api.coinbase.com/oauth/token?grant_type=authorization_code&code=${code}&client_id=${process.env.OAUTH_CLIENT_ID}&client_secret=${process.env.OAUTH_SECRET}&redirect_uri=${process.env.OAUTH_REDIRECT}`
     );
 
     // const response = await axios.post(

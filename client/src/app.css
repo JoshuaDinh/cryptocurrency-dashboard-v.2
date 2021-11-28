@@ -32,7 +32,7 @@ a {
   color: black;
 }
 .red {
-  color: rgb(220, 43, 43) !important;
+  color: rgba(201, 31, 31, 0.75) !important;
 }
 
 .green {
