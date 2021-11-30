@@ -1,6 +1,7 @@
 .detail-cards-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   height: 60%;
   color: var(--secondary-color);
 }
@@ -12,7 +13,7 @@
   height: 100%;
   font-size: 0.9rem;
   padding: 3%;
-  margin-top: 15px;
+  margin-top: 2vh;
 
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -30,6 +31,12 @@
 
 @media only screen and (max-width: 1350px) {
   .detail-cards-container {
-    margin-top: 3vh;
+    margin-top: 2vh;
+  }
+  .detail-card {
+    margin: 0;
+  }
+  .detail-card:nth-child(2) {
+    margin-top: 2vh;
   }
 }

@@ -9,11 +9,12 @@ const Account = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("/Api/OAuth/lol");
+      const response = await axios.get("/api/user");
       setUser(response.data);
     };
     fetchData();
   }, []);
+  console.log(user);
 
   // useEffect(() => {
   //   const fetchData = async () => {
