@@ -3,8 +3,19 @@
   justify-content: space-between;
   width: 100%;
   padding: 2%;
+  max-height: 100vh;
 }
 
-.top-five-container {
-  width: 40%;
+.top-five-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+}
+
+.top-five-chart-container {
+  display: flex;
+  justify-content: space-between;
+  height: 55%;
 }

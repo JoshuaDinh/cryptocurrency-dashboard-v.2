@@ -5,17 +5,23 @@ import { determineColor } from "Utilities/Utilities";
 
 const BasicCard = ({
   image,
-  title,
+  name,
   percentage,
   operator,
   current_price,
   setSelectedCoin,
+  id,
 }) => {
   return (
-    <Link to="/" exact className="basic-card">
+    <Link
+      to="/"
+      exact
+      className="basic-card"
+      onClick={() => setSelectedCoin(id)}
+    >
       <div className="basic-card-top">
         <img src={image} alt="" className="basic-card-image" />
-        <h2>{title}</h2>
+        <h2>{name}</h2>
       </div>
       <h2>{current_price}</h2>
       <div className="basic-card-bottom">

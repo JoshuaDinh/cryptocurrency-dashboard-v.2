@@ -18,7 +18,7 @@ const SearchBar = ({ setSelectedCoin, coinList, selectedCoin }) => {
       }, 900);
       return () => clearTimeout(timer);
     }
-  }, [input]);
+  }, [input, setSelectedCoin]);
 
   return (
     <div className="search-bar">

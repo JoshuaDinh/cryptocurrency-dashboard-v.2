@@ -49,6 +49,7 @@ export const DoughnutOptions = {
     title: {
       display: true,
       text: "Top 5 by Market Cap",
+      font: { size: 16 },
     },
   },
   scales: {
@@ -77,11 +78,11 @@ export const DoughnutData = (canvas, coinList) => {
 
   return {
     labels: [
-      coinList[0]?.name,
-      coinList[1]?.name,
-      coinList[2]?.name,
-      coinList[3]?.name,
-      coinList[4]?.name,
+      coinList[0]?.symbol.toUpperCase(),
+      coinList[1]?.symbol.toUpperCase(),
+      coinList[2]?.symbol.toUpperCase(),
+      coinList[3]?.symbol.toUpperCase(),
+      coinList[4]?.symbol.toUpperCase(),
     ],
     datasets: [
       {
@@ -112,6 +113,7 @@ export const PieOptions = {
     title: {
       display: true,
       text: "Top 5 by Volume",
+      font: { size: 16 },
     },
   },
   scales: {
@@ -139,23 +141,23 @@ export const PieData = (canvas, coinList) => {
 
   // Sorts Array by Volume
   const sortedArray = [...coinList];
-  const arr = sortedArray.sort((a, b) => {
+  sortedArray.sort((a, b) => {
     return b.total_volume - a.total_volume;
   });
 
   // Removes first 5 tokens from sorted array
   let sortedData = [];
-  const sortedArr = sortedArray.slice(0, 5).map((coin) => {
-    sortedData.push(coin);
+  sortedArray.slice(0, 5).map((coin) => {
+    return sortedData.push(coin);
   });
 
   return {
     labels: [
-      sortedData[0]?.name,
-      sortedData[1]?.name,
-      sortedData[2]?.name,
-      sortedData[3]?.name,
-      sortedData[4]?.name,
+      sortedData[0]?.symbol.toUpperCase(),
+      sortedData[1]?.symbol.toUpperCase(),
+      sortedData[2]?.symbol.toUpperCase(),
+      sortedData[3]?.symbol.toUpperCase(),
+      sortedData[4]?.symbol.toUpperCase(),
     ],
     datasets: [
       {
@@ -176,4 +178,64 @@ export const PieData = (canvas, coinList) => {
       },
     ],
   };
+};
+
+export const HBarChartData = (canvas, coinList) => {
+  const ctx = canvas.getContext("2d");
+  let gradient = ctx.createLinearGradient(500, 0, 200, 0);
+  gradient.addColorStop(1, "rgba(0, 82, 162, 0.75)");
+  gradient.addColorStop(0, "rgba(0, 38, 77, 1)");
+
+  // Sorts Array by Volume
+  const sortedArray = [...coinList];
+  sortedArray.sort((a, b) => {
+    return b.price_change_percentage_24h - a.price_change_percentage_24h;
+  });
+
+  // Removes first 5 tokens from sorted array
+  let sortedData = [];
+  sortedArray.slice(0, 5).map((coin) => {
+    return sortedData.push(coin);
+  });
+
+  return {
+    labels: [
+      sortedData[0]?.name,
+      sortedData[1]?.name,
+      sortedData[2]?.name,
+      sortedData[3]?.name,
+      sortedData[4]?.name,
+    ],
+    datasets: [
+      {
+        data: [
+          sortedData[0]?.price_change_percentage_24h,
+          sortedData[1]?.price_change_percentage_24h,
+          sortedData[2]?.price_change_percentage_24h,
+          sortedData[3]?.price_change_percentage_24h,
+          sortedData[4]?.price_change_percentage_24h,
+        ],
+        backgroundColor: [
+          gradient,
+          "rgba(2, 56, 110, 1)",
+          "rgba(0, 38, 77, 1)",
+          "rgba(0, 23, 45, 1)",
+          "rgba(0, 82, 162,1)",
+        ],
+      },
+    ],
+  };
+};
+
+export const HBarChartOptions = {
+  plugins: {
+    title: {
+      display: true,
+      text: "Top 5 by 24hr Price Change %",
+      font: { size: 16 },
+    },
+    legend: {
+      display: false,
+    },
+  },
 };

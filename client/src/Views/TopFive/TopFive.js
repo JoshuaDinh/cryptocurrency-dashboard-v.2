@@ -3,6 +3,7 @@ import "./topFive.css";
 import Table from "Components/Table/Table";
 import DoughnutChart from "Components/DoughnutChart/DoughnutChart";
 import PieChart from "Components/PieChart/PieChart";
+import HorizontalBarChart from "Components/HorizontalBarChart/HorizontalBarChart";
 
 const TopFive = ({ coinList, setSelectedCoin, selectedCoin }) => {
   return (
@@ -12,9 +13,12 @@ const TopFive = ({ coinList, setSelectedCoin, selectedCoin }) => {
         setSelectedCoin={setSelectedCoin}
         coinList={coinList}
       />
-      <div className="top-five-container">
-        <DoughnutChart coinList={coinList} />
-        <PieChart coinList={coinList} />
+      <div className="top-five-right-container">
+        <HorizontalBarChart coinList={coinList} />
+        <div className="top-five-chart-container">
+          <DoughnutChart coinList={coinList} />
+          <PieChart coinList={coinList} />
+        </div>
       </div>
     </div>
   );

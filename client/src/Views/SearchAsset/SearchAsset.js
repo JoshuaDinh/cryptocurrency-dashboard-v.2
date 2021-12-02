@@ -11,17 +11,13 @@ import CandleStickChart from "Components/CandleStickChart/CandleStickChart";
 const SearchAsset = ({ selectedCoin, setSelectedCoin, coinList }) => {
   const [selectedData, setSelectedData] = useState({});
 
-  const filterData = (coinList) => {
+  useEffect(() => {
     for (let coin of coinList) {
       if (coin.id === selectedCoin) {
         setSelectedData(coin);
       }
     }
-  };
-
-  useEffect(() => {
-    filterData(coinList);
-  }, [selectedCoin]);
+  }, [selectedCoin, coinList]);
 
   return (
     <div className="assets">

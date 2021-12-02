@@ -7,11 +7,13 @@ const AllAssets = ({ coinList, setSelectedCoin }) => {
     return coinList.map((coin) => {
       return (
         <BasicCard
-          title={coin.name}
+          id={coin.id}
+          name={coin.name}
           image={coin.image}
           current_price={`$${coin.current_price}`}
           percentage={coin.price_change_percentage_24h}
           operator={"+"}
+          setSelectedCoin={setSelectedCoin}
         />
       );
     });
