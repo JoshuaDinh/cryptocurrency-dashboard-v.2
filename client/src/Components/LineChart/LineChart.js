@@ -59,7 +59,7 @@ const LineChart = ({ selectedCoin, coinList }) => {
     } catch (err) {
       console.log(err);
     }
-  }, [selectedCoin]);
+  }, [selectedCoin, index]);
 
   return (
     <>

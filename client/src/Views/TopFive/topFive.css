@@ -1,10 +1,10 @@
-.market-cap {
+.top-five {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 2%;
 }
 
-.market-cap-chart-container {
+.top-five-container {
   width: 40%;
 }

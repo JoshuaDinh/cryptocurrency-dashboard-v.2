@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./assets.css";
+import "./searchAsset.css";
 import Slide from "Components/Slide/Slide";
 import LineChart from "Components/LineChart/LineChart";
 import MarketStats from "Components/MarketStats/MarketStats";
@@ -8,7 +8,7 @@ import SearchBar from "Components/SearchBar/SearchBar";
 import SelectedCoinHeader from "Components/SelectedCoinHeader/SelectedCoinHeader";
 import CandleStickChart from "Components/CandleStickChart/CandleStickChart";
 
-const Assets = ({ selectedCoin, setSelectedCoin, coinList }) => {
+const SearchAsset = ({ selectedCoin, setSelectedCoin, coinList }) => {
   const [selectedData, setSelectedData] = useState({});
 
   const filterData = (coinList) => {
@@ -52,4 +52,4 @@ const Assets = ({ selectedCoin, setSelectedCoin, coinList }) => {
   );
 };
 
-export default Assets;
+export default SearchAsset;

@@ -2,7 +2,7 @@ import React from "react";
 import "./dailyPercentages.css";
 import BasicCard from "Components/BasicCard/BasicCard";
 
-const AllAssets = ({ coinList }) => {
+const AllAssets = ({ coinList, setSelectedCoin }) => {
   function renderAllDigitalAssets(coinList) {
     return coinList.map((coin) => {
       return (

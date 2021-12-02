@@ -2,9 +2,8 @@ import React from "react";
 import "./sideNavigation.css";
 import { NavLink } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import LoginIcon from "@mui/icons-material/Login";
-import WaterfallChartOutlinedIcon from "@mui/icons-material/WaterfallChartOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import TableViewIcon from "@mui/icons-material/TableView";
 const SideNavigation = () => {
   return (
     <nav className="side-nav">
@@ -15,15 +14,15 @@ const SideNavigation = () => {
           exact
           className="side-nav-link"
         >
-          <DashboardIcon />
+          <SearchIcon />
         </NavLink>
         <NavLink
           activeClassName="side-nav-active"
-          to="/MarketCap"
+          to="/TopFive"
           exact
           className="side-nav-link"
         >
-          <WaterfallChartOutlinedIcon />
+          <TableViewIcon />
         </NavLink>
         <NavLink
           activeClassName="side-nav-active"
@@ -31,7 +30,7 @@ const SideNavigation = () => {
           exact
           className="side-nav-link"
         >
-          <AccountBalanceIcon />
+          <DashboardIcon />
         </NavLink>
       </div>
       {/* <a

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./app.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MarketCap from "./Views/MarketCap/MarketCap";
+import MarketCap from "./Views/TopFive/TopFive";
 import SideNavigation from "Components/SideNavigation/SideNavigation";
-import Assets from "./Views/Assets/Assets";
+import Assets from "./Views/SearchAsset/SearchAsset";
 import DailyPercentages from "./Views/DailyPercentages/DailyPercentages";
 import axios from "axios";
+import SearchAsset from "./Views/SearchAsset/SearchAsset";
 
 const App = () => {
   const [selectedCoin, setSelectedCoin] = useState("");
@@ -32,7 +33,7 @@ const App = () => {
       <div className="app">
         <SideNavigation />
         <Switch>
-          <Route exact path="/MarketCap">
+          <Route exact path="/TopFive">
             <MarketCap
               selectedCoin={selectedCoin}
               setSelectedCoin={setSelectedCoin}
@@ -48,7 +49,7 @@ const App = () => {
           </Route>
 
           <Route exact path="/">
-            <Assets
+            <SearchAsset
               selectedCoin={selectedCoin}
               setSelectedCoin={setSelectedCoin}
               coinList={coinList}

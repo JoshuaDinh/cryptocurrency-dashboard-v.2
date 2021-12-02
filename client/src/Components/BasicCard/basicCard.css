@@ -10,17 +10,13 @@
 }
 .basic-card:hover {
   color: white;
-  background: #16222a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    rgb(58, 96, 115, 0.5),
-    rgb(22, 34, 42, 0.5)
-  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
-    rgb(58, 96, 115, 0.5),
-    rgb(22, 34, 42, 0.5)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    161deg,
+    rgba(0, 23, 45, 0.75) 10%,
+    rgba(0, 38, 77, 0.75) 36%,
+    rgba(2, 56, 110, 0.75) 72%,
+    rgba(0, 82, 162, 0.75) 100%
+  );
 }
 
 .basic-card-top {
