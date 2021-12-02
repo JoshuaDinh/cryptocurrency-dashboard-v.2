@@ -1,0 +1,10 @@
+.market-cap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2%;
+}
+
+.market-cap-chart-container {
+  width: 40%;
+}

@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const Oauth = require("./Routes/api/OAuth");
+const User = require("./Routes/api/User");
 require("dotenv").config();
 
 // initialize app config
@@ -14,6 +15,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/OAuth", Oauth);
+app.use("/api/User", User);
 
 // Static assets - production
 if (process.env.NODE_ENV === "production") {

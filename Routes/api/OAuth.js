@@ -58,7 +58,10 @@ router.get("/verify", async (req, res) => {
     refreshToken = response.data.refresh_token;
     // res.send({ response: response?.data });
     console.log(response);
-    res.cookie(accessToken, refreshToken, { httpOnly: true, secure: false });
+    res.cookie(Authorization, "Bearer" + accessToken, {
+      httpOnly: true,
+      secure: false,
+    });
     res.redirect("http://localhost:3000/User-Verified");
   } catch (err) {
     console.log(err);

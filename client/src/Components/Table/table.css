@@ -1,11 +1,8 @@
 .table-container {
   font-size: 0.8rem;
   overflow-y: scroll;
-  height: 100%;
-  width: 100%;
-}
-table {
-  overflow: scroll;
+  height: 92vh;
+  width: 50vw;
 }
 
 tr:hover {
@@ -28,12 +25,6 @@ td {
 
 .table-coin-img {
   max-height: 2rem;
-}
-
-.table-selected-row {
-  border: 1px solid rgba(0, 82, 162, 0.75);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .row {

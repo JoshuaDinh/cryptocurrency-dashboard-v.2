@@ -19,32 +19,19 @@ const SideNavigation = () => {
         </NavLink>
         <NavLink
           activeClassName="side-nav-active"
-          to="/User-Verified"
-          className="side-nav-link"
-        >
-          <AccountBalanceIcon />
-        </NavLink>
-        <NavLink
-          activeClassName="side-nav-active"
-          to="/nft"
-          className="side-nav-link"
-        >
-          <span>-NFT-</span>
-        </NavLink>
-        <NavLink
-          activeClassName="side-nav-active"
-          to="/candle-stick"
+          to="/MarketCap"
+          exact
           className="side-nav-link"
         >
           <WaterfallChartOutlinedIcon />
         </NavLink>
       </div>
-      <a
+      {/* <a
         className="side-nav-coinbase"
         href="http://localhost:8080/api/oAuth/redirect"
       >
         <LoginIcon />
-      </a>
+      </a> */}
     </nav>
   );
 };
