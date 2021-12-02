@@ -180,7 +180,7 @@ export const PieData = (canvas, coinList) => {
   };
 };
 
-export const HBarChartData = (canvas, coinList) => {
+export const BarChartData = (canvas, coinList) => {
   const ctx = canvas.getContext("2d");
   let gradient = ctx.createLinearGradient(500, 0, 200, 0);
   gradient.addColorStop(1, "rgba(0, 82, 162, 0.75)");
@@ -227,7 +227,7 @@ export const HBarChartData = (canvas, coinList) => {
   };
 };
 
-export const HBarChartOptions = {
+export const BarChartOptions = {
   plugins: {
     title: {
       display: true,

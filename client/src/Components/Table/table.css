@@ -31,7 +31,11 @@ td {
   background: var(--main-bkg);
 }
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1150px) {
+  .table-container {
+    margin-top: 2vh;
+    min-width: 100%;
+  }
   table {
     width: 100%;
   }
