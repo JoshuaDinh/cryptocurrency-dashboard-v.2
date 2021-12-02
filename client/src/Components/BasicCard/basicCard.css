@@ -1,0 +1,40 @@
+.basic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 25vh;
+  border-radius: 25px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.basic-card:hover {
+  color: white;
+  background: #16222a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.5),
+    rgb(22, 34, 42, 0.5)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(58, 96, 115, 0.5),
+    rgb(22, 34, 42, 0.5)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.basic-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.basic-card-image {
+  width: 3em;
+}
+
+.basic-card-bottom {
+  display: flex;
+  align-items: center;
+}

@@ -71,9 +71,10 @@ export const DoughnutOptions = {
 export const DoughnutData = (canvas, coinList) => {
   const ctx = canvas.getContext("2d");
 
-  let gradient = ctx.createLinearGradient(0, 0, 0, 180);
-  gradient.addColorStop(1, "rgb(58, 96, 115, 0.9)");
-  gradient.addColorStop(0, "rgb(22, 34, 42,0.9)");
+  let gradient = ctx.createLinearGradient(500, 0, 200, 0);
+  gradient.addColorStop(1, "rgba(0, 82, 162, 0.75)");
+  gradient.addColorStop(0, "rgba(0, 38, 77, 1)");
+
   return {
     labels: [
       coinList[0]?.name,
@@ -93,12 +94,85 @@ export const DoughnutData = (canvas, coinList) => {
         ],
         backgroundColor: [
           gradient,
-          "rgb(22, 34, 42)",
-          "rgb(58, 96, 115, 0.5)",
-          "rgb(58, 96, 115, 0.9)",
-          "rgb(22, 34, 42,0.9)",
+          "rgba(2, 56, 110, 1)",
+          "rgba(0, 38, 77, 1)",
+          "rgba(0, 23, 45, 1)",
+          "rgba(0, 82, 162,1)",
         ],
         borderWidth: 1,
+      },
+    ],
+  };
+};
+
+export const PieOptions = {
+  maintainAspectRatio: false,
+  responsive: true,
+  plugins: {
+    title: {
+      display: true,
+      text: "Top 5 by Volume",
+    },
+  },
+  scales: {
+    y: {
+      grid: {
+        display: false,
+      },
+      ticks: { display: false },
+    },
+    x: {
+      beginAtZero: true,
+      grid: {
+        display: false,
+      },
+      ticks: { display: false },
+    },
+  },
+};
+
+export const PieData = (canvas, coinList) => {
+  const ctx = canvas.getContext("2d");
+  let gradient = ctx.createLinearGradient(500, 0, 200, 0);
+  gradient.addColorStop(1, "rgba(0, 82, 162, 0.75)");
+  gradient.addColorStop(0, "rgba(0, 38, 77, 1)");
+
+  // Sorts Array by Volume
+  const sortedArray = [...coinList];
+  const arr = sortedArray.sort((a, b) => {
+    return b.total_volume - a.total_volume;
+  });
+
+  // Removes first 5 tokens from sorted array
+  let sortedData = [];
+  const sortedArr = sortedArray.slice(0, 5).map((coin) => {
+    sortedData.push(coin);
+  });
+
+  return {
+    labels: [
+      sortedData[0]?.name,
+      sortedData[1]?.name,
+      sortedData[2]?.name,
+      sortedData[3]?.name,
+      sortedData[4]?.name,
+    ],
+    datasets: [
+      {
+        data: [
+          sortedData[0]?.total_volume,
+          sortedData[1]?.total_volume,
+          sortedData[2]?.total_volume,
+          sortedData[3]?.total_volume,
+          sortedData[4]?.total_volume,
+        ],
+        backgroundColor: [
+          gradient,
+          "rgba(2, 56, 110, 1)",
+          "rgba(0, 38, 77, 1)",
+          "rgba(0, 23, 45, 1)",
+          "rgba(0, 82, 162,1)",
+        ],
       },
     ],
   };

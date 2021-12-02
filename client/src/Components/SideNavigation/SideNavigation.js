@@ -25,6 +25,14 @@ const SideNavigation = () => {
         >
           <WaterfallChartOutlinedIcon />
         </NavLink>
+        <NavLink
+          activeClassName="side-nav-active"
+          to="/DailyPercentages"
+          exact
+          className="side-nav-link"
+        >
+          <AccountBalanceIcon />
+        </NavLink>
       </div>
       {/* <a
         className="side-nav-coinbase"
